@@ -26,7 +26,7 @@
       "kyosai/mini/agency は公式サイトリンク中心で電話番号は未掲載（phones=[]）。",
       "全社の営業時間（hoursKey/hoursPresets）は代表的な目安。実データで差し替え可能。",
       "verified=true の会社のみ協会公開データ由来の実電話番号。",
-      "公式サイトリンクは確認できた各社の公式URLへ設定。マイページ/手続き案内は公式サイトまたは公式手続きページへ誘導。",
+      "officialUrl は各社公式トップ。mypageUrl は契約者ログイン/マイページを検証できた64社は実ポータルへ、確認できない24社は公式サイトへ設定（UIは前者を『マイページ』、後者を『公式サイト』と表示）。",
       "iconSkipHosts のドメインは自動アイコンが別社ロゴを返すため initials を使用。"
     ],
     "iconSkipHosts": [
@@ -308,7 +308,7 @@
       "hoursKey": "sat",
       "host": "www.tokiomarine-nichido.co.jp",
       "officialUrl": "https://www.tokiomarine-nichido.co.jp",
-      "mypageUrl": "https://www.tokiomarine-nichido.co.jp",
+      "mypageUrl": "https://www.tokiomarine-nichido.co.jp/service/contractor/keiyakusyasama.html",
       "phones": [
         {
           "label": "お客様相談センター",
@@ -327,7 +327,7 @@
       "hoursKey": "sat",
       "host": "www.sompo-japan.co.jp",
       "officialUrl": "https://www.sompo-japan.co.jp",
-      "mypageUrl": "https://www.sompo-japan.co.jp",
+      "mypageUrl": "https://www.sompo-japan.co.jp/mypage/",
       "phones": [
         {
           "label": "お客さま総合窓口",
@@ -350,7 +350,7 @@
       "hoursKey": "sat",
       "host": "www.ms-ins.com",
       "officialUrl": "https://www.ms-ins.com",
-      "mypageUrl": "https://www.ms-ins.com",
+      "mypageUrl": "https://www.ms-ins.com/personal/web_service/",
       "phones": [
         {
           "label": "お客さまデスク",
@@ -373,7 +373,7 @@
       "hoursKey": "sat",
       "host": "www.aioinissaydowa.co.jp",
       "officialUrl": "https://www.aioinissaydowa.co.jp",
-      "mypageUrl": "https://www.aioinissaydowa.co.jp",
+      "mypageUrl": "https://www.aioinissaydowa.co.jp/customer/web_service/first.html",
       "phones": [
         {
           "label": "カスタマーセンター",
@@ -396,7 +396,7 @@
       "hoursKey": "wk17",
       "host": "www.kyoeikasai.co.jp",
       "officialUrl": "https://www.kyoeikasai.co.jp",
-      "mypageUrl": "https://www.kyoeikasai.co.jp",
+      "mypageUrl": "https://www.kyoeikasai.co.jp/kymp/",
       "phones": [
         {
           "label": "カスタマーセンター",
@@ -415,7 +415,7 @@
       "hoursKey": "wk17",
       "host": "www.nisshinfire.co.jp",
       "officialUrl": "https://www.nisshinfire.co.jp",
-      "mypageUrl": "https://www.nisshinfire.co.jp",
+      "mypageUrl": "https://www.nisshinfire.co.jp/mynisshin/",
       "phones": [
         {
           "label": "お客さま相談室",
@@ -434,7 +434,7 @@
       "hoursKey": "wk17",
       "host": "www.daidokasai.co.jp",
       "officialUrl": "https://www.daidokasai.co.jp",
-      "mypageUrl": "https://www.daidokasai.co.jp",
+      "mypageUrl": "https://www.daidokasai.co.jp/contractor/",
       "phones": [
         {
           "label": "お客さま相談センター",
@@ -453,7 +453,7 @@
       "hoursKey": "sat",
       "host": "www.secom-sonpo.co.jp",
       "officialUrl": "https://www.secom-sonpo.co.jp",
-      "mypageUrl": "https://www.secom-sonpo.co.jp",
+      "mypageUrl": "https://www.secom-sonpo.co.jp/mypage/",
       "phones": [
         {
           "label": "お客様相談室",
@@ -472,7 +472,7 @@
       "hoursKey": "sat",
       "host": "aig.co.jp",
       "officialUrl": "https://aig.co.jp/sonpo",
-      "mypageUrl": "https://aig.co.jp/sonpo",
+      "mypageUrl": "https://www.aig.co.jp/sonpo/contractor",
       "phones": [
         {
           "label": "商品・ご契約のお問い合わせ",
@@ -529,7 +529,7 @@
       "hoursKey": "long",
       "host": "axa-direct.co.jp",
       "officialUrl": "https://axa-direct.co.jp",
-      "mypageUrl": "https://axa-direct.co.jp",
+      "mypageUrl": "https://www.axa-direct.co.jp/eCAM/StaticDispatcher/StaticDispatcher.aspx?entry=login",
       "phones": [
         {
           "label": "お客様相談室",
@@ -548,7 +548,7 @@
       "hoursKey": "long",
       "host": "www.mitsui-direct.co.jp",
       "officialUrl": "https://www.mitsui-direct.co.jp",
-      "mypageUrl": "https://www.mitsui-direct.co.jp",
+      "mypageUrl": "https://www.mitsui-direct.co.jp/customer/",
       "phones": [
         {
           "label": "お客さま相談デスク",
@@ -567,7 +567,7 @@
       "hoursKey": "long",
       "host": "www.sbisonpo.co.jp",
       "officialUrl": "https://www.sbisonpo.co.jp",
-      "mypageUrl": "https://www.sbisonpo.co.jp",
+      "mypageUrl": "https://www.sbisonpo.co.jp/car/members/",
       "phones": [
         {
           "label": "お客様相談室",
@@ -586,7 +586,7 @@
       "hoursKey": "long",
       "host": "www.au-sonpo.co.jp",
       "officialUrl": "https://www.au-sonpo.co.jp",
-      "mypageUrl": "https://www.au-sonpo.co.jp",
+      "mypageUrl": "https://www.au-sonpo.co.jp/mypage/",
       "phones": [
         {
           "label": "カスタマーセンター",
@@ -605,7 +605,7 @@
       "hoursKey": "long",
       "host": "www.rakuten-sonpo.co.jp",
       "officialUrl": "https://www.rakuten-sonpo.co.jp",
-      "mypageUrl": "https://www.rakuten-sonpo.co.jp",
+      "mypageUrl": "https://www.rakuten-sonpo.co.jp/tabid/462/Default.aspx",
       "phones": [
         {
           "label": "お客様相談センター",
@@ -624,7 +624,7 @@
       "hoursKey": "long",
       "host": "e-design.net",
       "officialUrl": "https://e-design.net",
-      "mypageUrl": "https://e-design.net",
+      "mypageUrl": "https://www.e-design.net/ande/contractor/",
       "phones": [
         {
           "label": "お客さま相談ダイヤル",
@@ -643,7 +643,7 @@
       "hoursKey": "long",
       "host": "www.sompo-direct.co.jp",
       "officialUrl": "https://www.sompo-direct.co.jp",
-      "mypageUrl": "https://www.sompo-direct.co.jp",
+      "mypageUrl": "https://www.sompo-direct.co.jp/mypage_contract/base/login/login",
       "phones": [
         {
           "label": "お客さま相談室",
@@ -676,7 +676,7 @@
       "hoursKey": "sat",
       "host": "www.anicom-sompo.co.jp",
       "officialUrl": "https://www.anicom-sompo.co.jp",
-      "mypageUrl": "https://www.anicom-sompo.co.jp",
+      "mypageUrl": "https://www.anicom-sompo.co.jp/customers/",
       "phones": [
         {
           "label": "お客様相談センター",
@@ -695,7 +695,7 @@
       "hoursKey": "sat",
       "host": "www.ipet-ins.com",
       "officialUrl": "https://www.ipet-ins.com",
-      "mypageUrl": "https://www.ipet-ins.com",
+      "mypageUrl": "https://mypage.ipet-ins.com/login/",
       "phones": [
         {
           "label": "お客さま総合ダイヤル",
@@ -714,7 +714,7 @@
       "hoursKey": "sat",
       "host": "petfamilyins.co.jp",
       "officialUrl": "https://petfamilyins.co.jp",
-      "mypageUrl": "https://petfamilyins.co.jp",
+      "mypageUrl": "https://mp1.petfamilyins.co.jp/exex-pafWeb-MyPage/login",
       "phones": [
         {
           "label": "お問い合わせ窓口",
@@ -733,7 +733,7 @@
       "hoursKey": "sat",
       "host": "www.jihoken.co.jp",
       "officialUrl": "https://www.jihoken.co.jp",
-      "mypageUrl": "https://www.jihoken.co.jp",
+      "mypageUrl": "https://www.jihoken.co.jp/mypage/mypage/",
       "phones": [
         {
           "label": "お客様の声相談センター",
@@ -771,7 +771,7 @@
       "hoursKey": "wk17",
       "host": "www.hs-sonpo.co.jp",
       "officialUrl": "https://www.hs-sonpo.co.jp",
-      "mypageUrl": "https://www.hs-sonpo.co.jp",
+      "mypageUrl": "https://mypage.hs-sonpo.co.jp/login",
       "phones": [
         {
           "label": "お客様相談室",
@@ -866,7 +866,7 @@
       "hoursKey": "sat",
       "host": "www.nissay.co.jp",
       "officialUrl": "https://www.nissay.co.jp",
-      "mypageUrl": "https://www.nissay.co.jp",
+      "mypageUrl": "https://www.nissay.co.jp/keiyaku/senyo/login/",
       "phones": [
         {
           "label": "ニッセイコールセンター",
@@ -885,7 +885,7 @@
       "hoursKey": "sat",
       "host": "www.dai-ichi-life.co.jp",
       "officialUrl": "https://www.dai-ichi-life.co.jp",
-      "mypageUrl": "https://www.dai-ichi-life.co.jp",
+      "mypageUrl": "https://www.dai-ichi-life.co.jp/contractor/index.html",
       "phones": [
         {
           "label": "第一生命コンタクトセンター",
@@ -904,7 +904,7 @@
       "hoursKey": "sat",
       "host": "www.meijiyasuda.co.jp",
       "officialUrl": "https://www.meijiyasuda.co.jp",
-      "mypageUrl": "https://www.meijiyasuda.co.jp",
+      "mypageUrl": "https://my1.meijiyasuda.co.jp/login.html",
       "phones": [
         {
           "label": "コミュニケーションセンター",
@@ -923,7 +923,7 @@
       "hoursKey": "sat",
       "host": "www.sumitomolife.co.jp",
       "officialUrl": "https://www.sumitomolife.co.jp",
-      "mypageUrl": "https://www.sumitomolife.co.jp",
+      "mypageUrl": "https://www.sumitomolife.co.jp/login/",
       "phones": [
         {
           "label": "スミセイコールセンター",
@@ -942,7 +942,7 @@
       "hoursKey": "sat",
       "host": "jp-life.japanpost.jp",
       "officialUrl": "https://jp-life.japanpost.jp",
-      "mypageUrl": "https://jp-life.japanpost.jp",
+      "mypageUrl": "https://www.jp-life.japanpost.jp/mypage/",
       "phones": [
         {
           "label": "かんぽコールセンター",
@@ -961,7 +961,7 @@
       "hoursKey": "sat",
       "host": "www.taiyo-seimei.co.jp",
       "officialUrl": "https://www.taiyo-seimei.co.jp",
-      "mypageUrl": "https://www.taiyo-seimei.co.jp",
+      "mypageUrl": "https://www.taiyo-seimei.co.jp/customer/mypage/index.html",
       "phones": [
         {
           "label": "お客様サービスセンター",
@@ -980,7 +980,7 @@
       "hoursKey": "sat",
       "host": "www.daido-life.co.jp",
       "officialUrl": "https://www.daido-life.co.jp",
-      "mypageUrl": "https://www.daido-life.co.jp",
+      "mypageUrl": "https://www.daido-life.co.jp/c_keiyaku/",
       "phones": [
         {
           "label": "コールセンター",
@@ -999,7 +999,7 @@
       "hoursKey": "sat",
       "host": "www.fukoku-life.co.jp",
       "officialUrl": "https://www.fukoku-life.co.jp",
-      "mypageUrl": "https://www.fukoku-life.co.jp",
+      "mypageUrl": "https://www.fukoku-life.co.jp/contract/mypage/",
       "phones": [
         {
           "label": "お客さまセンター",
@@ -1018,7 +1018,7 @@
       "hoursKey": "sat",
       "host": "www.asahi-life.co.jp",
       "officialUrl": "https://www.asahi-life.co.jp",
-      "mypageUrl": "https://www.asahi-life.co.jp",
+      "mypageUrl": "https://www.asahi-life.co.jp/service/mypage/index.html",
       "phones": [
         {
           "label": "お客様サービスセンター",
@@ -1037,7 +1037,7 @@
       "hoursKey": "sat",
       "host": "www.taiju-life.co.jp",
       "officialUrl": "https://www.taiju-life.co.jp",
-      "mypageUrl": "https://www.taiju-life.co.jp",
+      "mypageUrl": "https://www.taiju-life.co.jp/mypage/",
       "phones": [
         {
           "label": "お客さまサービスセンター",
@@ -1075,7 +1075,7 @@
       "hoursKey": "sat",
       "host": "www.metlife.co.jp",
       "officialUrl": "https://www.metlife.co.jp",
-      "mypageUrl": "https://www.metlife.co.jp",
+      "mypageUrl": "https://www.metlife.co.jp/login/",
       "phones": [
         {
           "label": "カスタマーサービスセンター",
@@ -1098,7 +1098,7 @@
       "hoursKey": "sat",
       "host": "www.sonylife.co.jp",
       "officialUrl": "https://www.sonylife.co.jp",
-      "mypageUrl": "https://www.sonylife.co.jp",
+      "mypageUrl": "https://cs.sonylife.co.jp/lpv/pcms/sca/ct/registration/login.html",
       "phones": [
         {
           "label": "カスタマーセンター",
@@ -1117,7 +1117,7 @@
       "hoursKey": "sat",
       "host": "www.prudential.co.jp",
       "officialUrl": "https://www.prudential.co.jp",
-      "mypageUrl": "https://www.prudential.co.jp",
+      "mypageUrl": "https://www.prudential.co.jp/contractor/mypage/",
       "phones": [
         {
           "label": "カスタマーサービスセンター",
@@ -1136,7 +1136,7 @@
       "hoursKey": "sat",
       "host": "www.gib-life.co.jp",
       "officialUrl": "https://www.gib-life.co.jp",
-      "mypageUrl": "https://www.gib-life.co.jp",
+      "mypageUrl": "https://www.gib-life.co.jp/st/portal.html",
       "phones": [
         {
           "label": "コールセンター",
@@ -1155,7 +1155,7 @@
       "hoursKey": "sat",
       "host": "axa.co.jp",
       "officialUrl": "https://axa.co.jp",
-      "mypageUrl": "https://axa.co.jp",
+      "mypageUrl": "https://myweb.axa.co.jp/login",
       "phones": [
         {
           "label": "お客様相談室",
@@ -1174,7 +1174,7 @@
       "hoursKey": "sat",
       "host": "www.tmn-anshin.co.jp",
       "officialUrl": "https://www.tmn-anshin.co.jp",
-      "mypageUrl": "https://www.tmn-anshin.co.jp",
+      "mypageUrl": "https://www.tmn-anshin.co.jp/keiyaku/mypage/",
       "phones": [
         {
           "label": "カスタマーセンター",
@@ -1193,7 +1193,7 @@
       "hoursKey": "sat",
       "host": "www.msa-life.co.jp",
       "officialUrl": "https://www.msa-life.co.jp",
-      "mypageUrl": "https://www.msa-life.co.jp",
+      "mypageUrl": "https://www.msa-life.co.jp/customer/service/",
       "phones": [
         {
           "label": "お客さまサービスセンター",
@@ -1212,7 +1212,7 @@
       "hoursKey": "sat",
       "host": "www.himawari-life.co.jp",
       "officialUrl": "https://www.himawari-life.co.jp",
-      "mypageUrl": "https://www.himawari-life.co.jp",
+      "mypageUrl": "https://www.himawari-life.co.jp/customer/",
       "phones": [
         {
           "label": "お客さま相談グループ",
@@ -1231,7 +1231,7 @@
       "hoursKey": "sat",
       "host": "www.orixlife.co.jp",
       "officialUrl": "https://www.orixlife.co.jp",
-      "mypageUrl": "https://www.orixlife.co.jp",
+      "mypageUrl": "https://www.orixlife.co.jp/customer/mypage/",
       "phones": [
         {
           "label": "カスタマーサービスセンター",
@@ -1254,7 +1254,7 @@
       "hoursKey": "sat",
       "host": "www.lifenet-seimei.co.jp",
       "officialUrl": "https://www.lifenet-seimei.co.jp",
-      "mypageUrl": "https://www.lifenet-seimei.co.jp",
+      "mypageUrl": "https://www.lifenet-seimei.co.jp/customer/",
       "phones": [
         {
           "label": "コンタクトセンター",
@@ -1273,7 +1273,7 @@
       "hoursKey": "sat",
       "host": "www.life8739.co.jp",
       "officialUrl": "https://www.life8739.co.jp",
-      "mypageUrl": "https://www.life8739.co.jp",
+      "mypageUrl": "https://c.life8739.co.jp/",
       "phones": [
         {
           "label": "お客様コンタクトセンター",
@@ -1292,7 +1292,7 @@
       "hoursKey": "sat",
       "host": "neofirst.co.jp",
       "officialUrl": "https://neofirst.co.jp",
-      "mypageUrl": "https://neofirst.co.jp",
+      "mypageUrl": "https://neofirst.co.jp/customer/",
       "phones": [
         {
           "label": "コンタクトセンター",
@@ -1311,7 +1311,7 @@
       "hoursKey": "sat",
       "host": "medicarelife.com",
       "officialUrl": "https://medicarelife.com",
-      "mypageUrl": "https://medicarelife.com",
+      "mypageUrl": "https://www.medicarelife.com/mypage-guide/",
       "phones": [
         {
           "label": "コールセンター",
@@ -1330,7 +1330,7 @@
       "hoursKey": "sat",
       "host": "www.zurichlife.co.jp",
       "officialUrl": "https://www.zurichlife.co.jp",
-      "mypageUrl": "https://www.zurichlife.co.jp",
+      "mypageUrl": "https://service.zurichlife.co.jp/zlife/ZOL_Login",
       "phones": [
         {
           "label": "カスタマーケアセンター",
@@ -1368,7 +1368,7 @@
       "hoursKey": "sat",
       "host": "www.manulife.co.jp",
       "officialUrl": "https://www.manulife.co.jp/ja/individual.html",
-      "mypageUrl": "https://www.manulife.co.jp/ja/individual.html",
+      "mypageUrl": "https://mypage.manulife.co.jp/",
       "phones": [
         {
           "label": "お客様コールセンター",
@@ -1391,7 +1391,7 @@
       "hoursKey": "sat",
       "host": "www.sbilife.co.jp",
       "officialUrl": "https://www.sbilife.co.jp",
-      "mypageUrl": "https://www.sbilife.co.jp",
+      "mypageUrl": "https://www.ebiz.sbilife.co.jp/mypage/login",
       "phones": [
         {
           "label": "お客様コンタクトセンター",
@@ -1452,7 +1452,7 @@
       "hoursKey": "sat",
       "host": "www.d-frontier-life.co.jp",
       "officialUrl": "https://www.d-frontier-life.co.jp",
-      "mypageUrl": "https://www.d-frontier-life.co.jp",
+      "mypageUrl": "https://www.d-frontier-life.co.jp/ky/",
       "phones": [
         {
           "label": "お客さまサービスセンター",
@@ -1471,7 +1471,7 @@
       "hoursKey": "sat",
       "host": "www.tdf-life.co.jp",
       "officialUrl": "https://www.tdf-life.co.jp",
-      "mypageUrl": "https://www.tdf-life.co.jp",
+      "mypageUrl": "https://www.tdf-life.co.jp/service/",
       "phones": [
         {
           "label": "お客様サービスセンター",
@@ -1490,7 +1490,7 @@
       "hoursKey": "sat",
       "host": "nnlife.co.jp",
       "officialUrl": "https://nnlife.co.jp",
-      "mypageUrl": "https://nnlife.co.jp",
+      "mypageUrl": "https://www.nnlife.co.jp/customer_login",
       "phones": [
         {
           "label": "サービスセンター",
@@ -1528,7 +1528,7 @@
       "hoursKey": "sat",
       "host": "ca-life.jp",
       "officialUrl": "https://ca-life.jp",
-      "mypageUrl": "https://ca-life.jp",
+      "mypageUrl": "https://mypage.ca-life.jp/",
       "phones": [
         {
           "label": "カスタマーサービスセンター",
@@ -1585,7 +1585,7 @@
       "hoursKey": "sat",
       "host": "www.pgf-life.co.jp",
       "officialUrl": "https://www.pgf-life.co.jp",
-      "mypageUrl": "https://www.pgf-life.co.jp",
+      "mypageUrl": "https://www.pgf-life.co.jp/mypage/index.html",
       "phones": [
         {
           "label": "コールセンター",
@@ -1604,7 +1604,7 @@
       "hoursKey": "sat",
       "host": "www.ms-primary.com",
       "officialUrl": "https://www.ms-primary.com",
-      "mypageUrl": "https://www.ms-primary.com",
+      "mypageUrl": "https://msp.ms-primary.com/p/Login",
       "phones": [
         {
           "label": "お客さまサービスセンター",
@@ -1642,7 +1642,7 @@
       "hoursKey": "sat",
       "host": "www.meijiyasuda-trustlife.co.jp",
       "officialUrl": "https://www.meijiyasuda-trustlife.co.jp",
-      "mypageUrl": "https://www.meijiyasuda-trustlife.co.jp",
+      "mypageUrl": "https://www.meijiyasuda-trustlife.co.jp/aali-customer/mypage/",
       "phones": [
         {
           "label": "カスタマーサービスセンター",
@@ -1661,7 +1661,7 @@
       "hoursKey": "wk17",
       "host": "www.ja-kyosai.or.jp",
       "officialUrl": "https://www.ja-kyosai.or.jp",
-      "mypageUrl": "https://www.ja-kyosai.or.jp",
+      "mypageUrl": "https://www.ja-kyosai.or.jp/gokeiyaku/onlineservice/",
       "phones": [],
       "verified": false
     },
@@ -1675,7 +1675,7 @@
       "hoursKey": "sat",
       "host": "www.zenrosai.coop",
       "officialUrl": "https://www.zenrosai.coop",
-      "mypageUrl": "https://www.zenrosai.coop",
+      "mypageUrl": "https://www.mypage.zenrosai.coop/login",
       "phones": [],
       "verified": false
     },
@@ -1689,7 +1689,7 @@
       "hoursKey": "wk17",
       "host": "www.kyosai-cc.or.jp",
       "officialUrl": "https://www.kyosai-cc.or.jp",
-      "mypageUrl": "https://www.kyosai-cc.or.jp",
+      "mypageUrl": "https://www.kyosai-cc.or.jp/mypage.html",
       "phones": [],
       "verified": false
     },
@@ -1703,7 +1703,7 @@
       "hoursKey": "sat",
       "host": "coopkyosai.coop",
       "officialUrl": "https://coopkyosai.coop",
-      "mypageUrl": "https://coopkyosai.coop",
+      "mypageUrl": "https://mypage.coopkyosai.coop/login/",
       "phones": [],
       "verified": false
     },
@@ -1717,7 +1717,7 @@
       "hoursKey": "wk17",
       "host": "www.kyousyokuin.or.jp",
       "officialUrl": "https://www.kyousyokuin.or.jp",
-      "mypageUrl": "https://www.kyousyokuin.or.jp",
+      "mypageUrl": "https://www.kyousyokuin.or.jp/mypage/Start.aspx",
       "phones": [],
       "verified": false
     },
@@ -1759,7 +1759,7 @@
       "hoursKey": "long",
       "host": "justincase.jp",
       "officialUrl": "https://justincase.jp",
-      "mypageUrl": "https://justincase.jp",
+      "mypageUrl": "https://portal.justincase.jp/",
       "phones": [],
       "verified": false
     },
@@ -1801,7 +1801,7 @@
       "hoursKey": "shop",
       "host": "www.hokennomadoguchi.com",
       "officialUrl": "https://www.hokennomadoguchi.com",
-      "mypageUrl": "https://www.hokennomadoguchi.com",
+      "mypageUrl": "https://mypage.hokennomadoguchi.com/login",
       "phones": [],
       "verified": false
     },
@@ -1815,7 +1815,7 @@
       "hoursKey": "shop",
       "host": "www.hokepon.com",
       "officialUrl": "https://www.hokepon.com/",
-      "mypageUrl": "https://www.hokepon.com/",
+      "mypageUrl": "https://www.hokepon.com/support/",
       "phones": [],
       "verified": false
     },
@@ -1829,7 +1829,7 @@
       "hoursKey": "shop",
       "host": "hoken-clinic.com",
       "officialUrl": "https://hoken-clinic.com",
-      "mypageUrl": "https://hoken-clinic.com",
+      "mypageUrl": "https://app.hoken-clinic.com/mypage/",
       "phones": [],
       "verified": false
     },
@@ -1843,7 +1843,7 @@
       "hoursKey": "shop",
       "host": "www.hokende.com",
       "officialUrl": "https://www.hokende.com/",
-      "mypageUrl": "https://www.hokende.com/",
+      "mypageUrl": "https://www.hokende.com/mypage/login",
       "phones": [],
       "verified": false
     },

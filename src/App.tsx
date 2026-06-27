@@ -161,8 +161,8 @@ function CompanyLogo({ company }: { company: Company }) {
   return (
     <div className="company-logo" aria-hidden="true">
       <div className="company-logo__fallback" style={{ backgroundColor: company.brandColor }}>
-        {company.initials.split('\n').map((line) => (
-          <span key={line}>{line}</span>
+        {company.initials.split('\n').map((line, index) => (
+          <span key={index}>{line}</span>
         ))}
       </div>
       {!skipIcon && (
@@ -200,6 +200,7 @@ function CompanyItem({
   const category = categoryFor(company);
   const hours = data.hoursPresets[company.hoursKey];
   const open = isOpen(company);
+  const hasPortal = company.mypageUrl !== company.officialUrl;
   const phone = pickPhone(company, selectedProcedure);
   const procedurePrefix = selectedProcedure ? `「${selectedProcedure}」の窓口` : '代表窓口';
   const helper =
@@ -259,8 +260,13 @@ function CompanyItem({
         <button type="button" className="primary-action" onClick={() => onOpen(company)}>
           詳しい窓口・手続き
         </button>
-        <a href={company.mypageUrl} target="_blank" rel="noreferrer" className="secondary-action">
-          マイページ
+        <a
+          href={hasPortal ? company.mypageUrl : company.officialUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="secondary-action"
+        >
+          {hasPortal ? 'マイページ' : '公式サイト'}
           <ExternalIcon />
         </a>
       </div>
@@ -298,6 +304,7 @@ function DetailDrawer({
   const category = categoryFor(company);
   const hours = data.hoursPresets[company.hoursKey];
   const open = isOpen(company);
+  const hasPortal = company.mypageUrl !== company.officialUrl;
 
   return (
     <div className="drawer-backdrop" role="presentation" onMouseDown={onClose}>
@@ -389,14 +396,23 @@ function DetailDrawer({
         </section>
 
         <div className="drawer-footer">
-          <a href={company.mypageUrl} target="_blank" rel="noreferrer" className="primary-action">
-            マイページ
-            <ExternalIcon />
-          </a>
-          <a href={company.officialUrl} target="_blank" rel="noreferrer" className="secondary-action">
-            公式サイト
-            <ExternalIcon />
-          </a>
+          {hasPortal ? (
+            <>
+              <a href={company.mypageUrl} target="_blank" rel="noreferrer" className="primary-action">
+                マイページ
+                <ExternalIcon />
+              </a>
+              <a href={company.officialUrl} target="_blank" rel="noreferrer" className="secondary-action">
+                公式サイト
+                <ExternalIcon />
+              </a>
+            </>
+          ) : (
+            <a href={company.officialUrl} target="_blank" rel="noreferrer" className="primary-action">
+              公式サイト
+              <ExternalIcon />
+            </a>
+          )}
         </div>
       </aside>
     </div>
