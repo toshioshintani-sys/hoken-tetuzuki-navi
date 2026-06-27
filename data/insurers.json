@@ -30,7 +30,13 @@
       "iconSkipHosts のドメインは自動アイコンが別社ロゴを返すため initials を使用。"
     ],
     "iconSkipHosts": [
-      "justincase.jp"
+      "justincase.jp",
+      "axa-direct.co.jp",
+      "www.capital-sonpo.co.jp",
+      "sakura-ins.co.jp",
+      "rescue-sonpo.jp",
+      "life.cardif.co.jp",
+      "ca-life.jp"
     ]
   },
   "categories": [
