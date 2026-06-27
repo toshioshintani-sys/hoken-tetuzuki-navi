@@ -627,6 +627,12 @@ svg {
   animation: pulse 1.8s ease-in-out infinite;
 }
 
+.status-badge--unknown {
+  color: #8a6d3b;
+  background: #fbf6ec;
+  border-color: #ecdcc0;
+}
+
 .company-item__meta {
   display: flex;
   align-items: center;

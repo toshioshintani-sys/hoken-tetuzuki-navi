@@ -26,6 +26,7 @@ type HoursPreset = {
     sunday: number[] | null;
     holiday: number[] | null;
   };
+  unknown?: boolean;
 };
 
 type Phone = {
@@ -131,10 +132,10 @@ function getJstSlot(date = new Date()) {
 
 function isOpen(company: Company) {
   const preset = data.hoursPresets[company.hoursKey];
-  if (!preset) return false;
+  if (!preset || preset.unknown) return false;
 
   const { key, minutes } = getJstSlot();
-  const range = preset.open[key] ?? preset.open.holiday;
+  const range = preset.open[key];
   return Boolean(range && range.length >= 2 && range[0] <= minutes && minutes < range[1]);
 }
 
@@ -179,7 +180,10 @@ function CompanyLogo({ company }: { company: Company }) {
   );
 }
 
-function StatusBadge({ open }: { open: boolean }) {
+function StatusBadge({ open, unknown }: { open: boolean; unknown?: boolean }) {
+  if (unknown) {
+    return <span className="status-badge status-badge--unknown">要確認</span>;
+  }
   return (
     <span className={open ? 'status-badge status-badge--open' : 'status-badge'}>
       <span />
@@ -200,15 +204,18 @@ function CompanyItem({
   const category = categoryFor(company);
   const hours = data.hoursPresets[company.hoursKey];
   const open = isOpen(company);
+  const hoursUnknown = Boolean(hours.unknown);
   const hasPortal = company.mypageUrl !== company.officialUrl;
   const phone = pickPhone(company, selectedProcedure);
   const procedurePrefix = selectedProcedure ? `「${selectedProcedure}」の窓口` : '代表窓口';
   const helper =
     company.category === 'nonlife' && selectedProcedure === '給付金・保険金請求'
       ? '事故受付は24時間365日対応の場合があります'
-      : open
-        ? 'ただいま受付中です'
-        : `営業時間外（${hours.text}）`;
+      : hoursUnknown
+        ? '受付時間は公式サイトでご確認ください'
+        : open
+          ? 'ただいま受付中です'
+          : `営業時間外（${hours.text}）`;
 
   return (
     <article className="company-item">
@@ -218,7 +225,7 @@ function CompanyItem({
           <h3>{company.name}</h3>
           <p>{company.kana}</p>
         </div>
-        <StatusBadge open={open} />
+        <StatusBadge open={open} unknown={hoursUnknown} />
       </div>
 
       <div className="company-item__meta">
@@ -304,6 +311,7 @@ function DetailDrawer({
   const category = categoryFor(company);
   const hours = data.hoursPresets[company.hoursKey];
   const open = isOpen(company);
+  const hoursUnknown = Boolean(hours.unknown);
   const hasPortal = company.mypageUrl !== company.officialUrl;
 
   return (
@@ -332,7 +340,7 @@ function DetailDrawer({
           <span className="category-tag" style={{ color: category.fg, background: category.bg }}>
             {category.label}
           </span>
-          <StatusBadge open={open} />
+          <StatusBadge open={open} unknown={hoursUnknown} />
         </div>
 
         <section className="drawer-section">

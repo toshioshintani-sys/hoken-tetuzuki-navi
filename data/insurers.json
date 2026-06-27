@@ -24,7 +24,7 @@
     ],
     "notes": [
       "kyosai/mini/agency は公式サイトリンク中心で電話番号は未掲載（phones=[]）。",
-      "全社の営業時間（hoursKey/hoursPresets）は代表的な目安。実データで差し替え可能。",
+      "営業時間は各社公式の「お客さま窓口/カスタマーセンター」電話受付時間（2026-06調査）。事故受付24時間等は別。確認できなかった社は『公式サイトでご確認ください』。",
       "verified=true の会社のみ協会公開データ由来の実電話番号。",
       "officialUrl は各社公式トップ。mypageUrl は契約者ログイン/マイページを検証できた64社は実ポータルへ、確認できない24社は公式サイトへ設定（UIは前者を『マイページ』、後者を『公式サイト』と表示）。",
       "iconSkipHosts のドメインは自動アイコンが別社ロゴを返すため initials を使用。"
@@ -99,22 +99,134 @@
       "key": "クレカ変更",
       "icon": "↻",
       "color": "#6d4aa8"
+    },
+    {
+      "key": "保険料控除証明書再発行",
+      "icon": "▤",
+      "color": "#a9762a"
     }
   ],
   "hoursPresets": {
-    "wk17": {
-      "text": "平日 9:00–17:00",
+    "h01": {
+      "text": "毎日 9:00–18:00",
+      "rows": [
+        {
+          "day": "毎日",
+          "time": "9:00–18:00"
+        }
+      ],
+      "open": {
+        "weekday": [
+          540,
+          1080
+        ],
+        "saturday": [
+          540,
+          1080
+        ],
+        "sunday": [
+          540,
+          1080
+        ],
+        "holiday": [
+          540,
+          1080
+        ]
+      }
+    },
+    "h02": {
+      "text": "平日 9:00–20:00 ／土・日・祝 9:00–17:00",
+      "rows": [
+        {
+          "day": "平日",
+          "time": "9:00–20:00"
+        },
+        {
+          "day": "土・日・祝",
+          "time": "9:00–17:00"
+        }
+      ],
+      "open": {
+        "weekday": [
+          540,
+          1200
+        ],
+        "saturday": [
+          540,
+          1020
+        ],
+        "sunday": [
+          540,
+          1020
+        ],
+        "holiday": [
+          540,
+          1020
+        ]
+      }
+    },
+    "h03": {
+      "text": "平日 9:00–18:00 ／土・日・祝 9:00–17:00",
+      "rows": [
+        {
+          "day": "平日",
+          "time": "9:00–18:00"
+        },
+        {
+          "day": "土・日・祝",
+          "time": "9:00–17:00"
+        }
+      ],
+      "open": {
+        "weekday": [
+          540,
+          1080
+        ],
+        "saturday": [
+          540,
+          1020
+        ],
+        "sunday": [
+          540,
+          1020
+        ],
+        "holiday": [
+          540,
+          1020
+        ]
+      }
+    },
+    "h04": {
+      "text": "平日 9:00–18:00 ／土・日・祝 休業",
+      "rows": [
+        {
+          "day": "平日",
+          "time": "9:00–18:00"
+        },
+        {
+          "day": "土・日・祝",
+          "time": "休業"
+        }
+      ],
+      "open": {
+        "weekday": [
+          540,
+          1080
+        ],
+        "saturday": null,
+        "sunday": null,
+        "holiday": null
+      }
+    },
+    "h05": {
+      "text": "平日 9:00–17:00 ／土・日・祝 休業",
       "rows": [
         {
           "day": "平日",
           "time": "9:00–17:00"
         },
         {
-          "day": "土曜",
-          "time": "休業"
-        },
-        {
-          "day": "日・祝",
+          "day": "土・日・祝",
           "time": "休業"
         }
       ],
@@ -128,15 +240,312 @@
         "holiday": null
       }
     },
-    "sat": {
-      "text": "平日 9:00–18:00 ／土 9:00–17:00",
+    "h06": {
+      "text": "毎日 9:00–17:00",
+      "rows": [
+        {
+          "day": "毎日",
+          "time": "9:00–17:00"
+        }
+      ],
+      "open": {
+        "weekday": [
+          540,
+          1020
+        ],
+        "saturday": [
+          540,
+          1020
+        ],
+        "sunday": [
+          540,
+          1020
+        ],
+        "holiday": [
+          540,
+          1020
+        ]
+      }
+    },
+    "h07": {
+      "text": "平日 9:00–17:00 ／土・日・祝 要確認",
+      "rows": [
+        {
+          "day": "平日",
+          "time": "9:00–17:00"
+        },
+        {
+          "day": "土・日・祝",
+          "time": "要確認"
+        }
+      ],
+      "open": {
+        "weekday": [
+          540,
+          1020
+        ],
+        "saturday": null,
+        "sunday": null,
+        "holiday": null
+      }
+    },
+    "h08": {
+      "text": "平日・土 9:00–20:00 ／日・祝 9:00–18:00",
+      "rows": [
+        {
+          "day": "平日・土",
+          "time": "9:00–20:00"
+        },
+        {
+          "day": "日・祝",
+          "time": "9:00–18:00"
+        }
+      ],
+      "open": {
+        "weekday": [
+          540,
+          1200
+        ],
+        "saturday": [
+          540,
+          1200
+        ],
+        "sunday": [
+          540,
+          1080
+        ],
+        "holiday": [
+          540,
+          1080
+        ]
+      }
+    },
+    "h09": {
+      "text": "平日・土 9:00–18:00 ／日・祝 休業",
+      "rows": [
+        {
+          "day": "平日・土",
+          "time": "9:00–18:00"
+        },
+        {
+          "day": "日・祝",
+          "time": "休業"
+        }
+      ],
+      "open": {
+        "weekday": [
+          540,
+          1080
+        ],
+        "saturday": [
+          540,
+          1080
+        ],
+        "sunday": null,
+        "holiday": null
+      }
+    },
+    "h10": {
+      "text": "平日 9:00–18:00 ／土・日・祝 要確認",
       "rows": [
         {
           "day": "平日",
           "time": "9:00–18:00"
         },
         {
-          "day": "土曜",
+          "day": "土・日・祝",
+          "time": "要確認"
+        }
+      ],
+      "open": {
+        "weekday": [
+          540,
+          1080
+        ],
+        "saturday": null,
+        "sunday": null,
+        "holiday": null
+      }
+    },
+    "h11": {
+      "text": "毎日 9:00–17:30",
+      "rows": [
+        {
+          "day": "毎日",
+          "time": "9:00–17:30"
+        }
+      ],
+      "open": {
+        "weekday": [
+          540,
+          1050
+        ],
+        "saturday": [
+          540,
+          1050
+        ],
+        "sunday": [
+          540,
+          1050
+        ],
+        "holiday": [
+          540,
+          1050
+        ]
+      }
+    },
+    "h12": {
+      "text": "毎日 9:00–20:00",
+      "rows": [
+        {
+          "day": "毎日",
+          "time": "9:00–20:00"
+        }
+      ],
+      "open": {
+        "weekday": [
+          540,
+          1200
+        ],
+        "saturday": [
+          540,
+          1200
+        ],
+        "sunday": [
+          540,
+          1200
+        ],
+        "holiday": [
+          540,
+          1200
+        ]
+      }
+    },
+    "h13": {
+      "text": "平日 9:30–17:30 ／土・日・祝 9:30–15:30",
+      "rows": [
+        {
+          "day": "平日",
+          "time": "9:30–17:30"
+        },
+        {
+          "day": "土・日・祝",
+          "time": "9:30–15:30"
+        }
+      ],
+      "open": {
+        "weekday": [
+          570,
+          1050
+        ],
+        "saturday": [
+          570,
+          930
+        ],
+        "sunday": [
+          570,
+          930
+        ],
+        "holiday": [
+          570,
+          930
+        ]
+      }
+    },
+    "h14": {
+      "text": "平日・土 9:00–18:00 ／日・祝 要確認",
+      "rows": [
+        {
+          "day": "平日・土",
+          "time": "9:00–18:00"
+        },
+        {
+          "day": "日・祝",
+          "time": "要確認"
+        }
+      ],
+      "open": {
+        "weekday": [
+          540,
+          1080
+        ],
+        "saturday": [
+          540,
+          1080
+        ],
+        "sunday": null,
+        "holiday": null
+      }
+    },
+    "ask": {
+      "text": "公式サイトでご確認ください",
+      "rows": [
+        {
+          "day": "電話受付",
+          "time": "公式サイトでご確認ください"
+        }
+      ],
+      "open": {
+        "weekday": null,
+        "saturday": null,
+        "sunday": null,
+        "holiday": null
+      },
+      "unknown": true
+    },
+    "h15": {
+      "text": "平日 10:00–17:00 ／土・日・祝 休業",
+      "rows": [
+        {
+          "day": "平日",
+          "time": "10:00–17:00"
+        },
+        {
+          "day": "土・日・祝",
+          "time": "休業"
+        }
+      ],
+      "open": {
+        "weekday": [
+          600,
+          1020
+        ],
+        "saturday": null,
+        "sunday": null,
+        "holiday": null
+      }
+    },
+    "h16": {
+      "text": "平日 9:15–17:00 ／土・日・祝 休業",
+      "rows": [
+        {
+          "day": "平日",
+          "time": "9:15–17:00"
+        },
+        {
+          "day": "土・日・祝",
+          "time": "休業"
+        }
+      ],
+      "open": {
+        "weekday": [
+          555,
+          1020
+        ],
+        "saturday": null,
+        "sunday": null,
+        "holiday": null
+      }
+    },
+    "h17": {
+      "text": "平日 9:00–18:00 ／土 9:00–17:00 ／日・祝 休業",
+      "rows": [
+        {
+          "day": "平日",
+          "time": "9:00–18:00"
+        },
+        {
+          "day": "土",
           "time": "9:00–17:00"
         },
         {
@@ -157,19 +566,128 @@
         "holiday": null
       }
     },
-    "long": {
-      "text": "平日 9:00–20:00 ／土日祝 9:00–18:00",
+    "h18": {
+      "text": "平日 9:00–21:00 ／土・日・祝 9:00–17:00",
+      "rows": [
+        {
+          "day": "平日",
+          "time": "9:00–21:00"
+        },
+        {
+          "day": "土・日・祝",
+          "time": "9:00–17:00"
+        }
+      ],
+      "open": {
+        "weekday": [
+          540,
+          1260
+        ],
+        "saturday": [
+          540,
+          1020
+        ],
+        "sunday": [
+          540,
+          1020
+        ],
+        "holiday": [
+          540,
+          1020
+        ]
+      }
+    },
+    "h19": {
+      "text": "平日・土 9:00–17:00 ／日・祝 休業",
+      "rows": [
+        {
+          "day": "平日・土",
+          "time": "9:00–17:00"
+        },
+        {
+          "day": "日・祝",
+          "time": "休業"
+        }
+      ],
+      "open": {
+        "weekday": [
+          540,
+          1020
+        ],
+        "saturday": [
+          540,
+          1020
+        ],
+        "sunday": null,
+        "holiday": null
+      }
+    },
+    "h20": {
+      "text": "平日・土・祝 9:00–17:30 ／日 休業",
+      "rows": [
+        {
+          "day": "平日・土・祝",
+          "time": "9:00–17:30"
+        },
+        {
+          "day": "日",
+          "time": "休業"
+        }
+      ],
+      "open": {
+        "weekday": [
+          540,
+          1050
+        ],
+        "saturday": [
+          540,
+          1050
+        ],
+        "sunday": null,
+        "holiday": [
+          540,
+          1050
+        ]
+      }
+    },
+    "h21": {
+      "text": "平日 9:00–17:30 ／土 9:00–17:00 ／日・祝 休業",
+      "rows": [
+        {
+          "day": "平日",
+          "time": "9:00–17:30"
+        },
+        {
+          "day": "土",
+          "time": "9:00–17:00"
+        },
+        {
+          "day": "日・祝",
+          "time": "休業"
+        }
+      ],
+      "open": {
+        "weekday": [
+          540,
+          1050
+        ],
+        "saturday": [
+          540,
+          1020
+        ],
+        "sunday": null,
+        "holiday": null
+      }
+    },
+    "h22": {
+      "text": "平日 9:00–20:00 ／土・日・祝 9:00–18:00",
       "rows": [
         {
           "day": "平日",
           "time": "9:00–20:00"
         },
         {
-          "day": "土・日",
-          "time": "9:00–18:00"
-        },
-        {
-          "day": "祝日",
+          "day": "土・日・祝",
           "time": "9:00–18:00"
         }
       ],
@@ -192,46 +710,172 @@
         ]
       }
     },
-    "shop": {
-      "text": "年中無休 10:00–19:00（店舗）",
+    "h23": {
+      "text": "平日 9:00–18:00 ／土・日 9:00–17:00 ／祝 休業",
       "rows": [
         {
-          "day": "月〜金",
-          "time": "10:00–19:00"
+          "day": "平日",
+          "time": "9:00–18:00"
+        },
+        {
+          "day": "土・日",
+          "time": "9:00–17:00"
+        },
+        {
+          "day": "祝",
+          "time": "休業"
+        }
+      ],
+      "open": {
+        "weekday": [
+          540,
+          1080
+        ],
+        "saturday": [
+          540,
+          1020
+        ],
+        "sunday": [
+          540,
+          1020
+        ],
+        "holiday": null
+      }
+    },
+    "h24": {
+      "text": "平日・土・祝 9:00–18:00 ／日 休業",
+      "rows": [
+        {
+          "day": "平日・土・祝",
+          "time": "9:00–18:00"
+        },
+        {
+          "day": "日",
+          "time": "休業"
+        }
+      ],
+      "open": {
+        "weekday": [
+          540,
+          1080
+        ],
+        "saturday": [
+          540,
+          1080
+        ],
+        "sunday": null,
+        "holiday": [
+          540,
+          1080
+        ]
+      }
+    },
+    "h25": {
+      "text": "平日・土 9:00–19:00 ／日・祝 休業",
+      "rows": [
+        {
+          "day": "平日・土",
+          "time": "9:00–19:00"
+        },
+        {
+          "day": "日・祝",
+          "time": "休業"
+        }
+      ],
+      "open": {
+        "weekday": [
+          540,
+          1140
+        ],
+        "saturday": [
+          540,
+          1140
+        ],
+        "sunday": null,
+        "holiday": null
+      }
+    },
+    "h26": {
+      "text": "平日 10:00–16:00 ／土・日・祝 休業",
+      "rows": [
+        {
+          "day": "平日",
+          "time": "10:00–16:00"
         },
         {
           "day": "土・日・祝",
-          "time": "10:00–19:00"
+          "time": "休業"
         }
       ],
       "open": {
         "weekday": [
           600,
-          1140
+          960
+        ],
+        "saturday": null,
+        "sunday": null,
+        "holiday": null
+      }
+    },
+    "h27": {
+      "text": "毎日 10:00–17:00",
+      "rows": [
+        {
+          "day": "毎日",
+          "time": "10:00–17:00"
+        }
+      ],
+      "open": {
+        "weekday": [
+          600,
+          1020
         ],
         "saturday": [
           600,
-          1140
+          1020
         ],
         "sunday": [
           600,
-          1140
+          1020
         ],
         "holiday": [
           600,
+          1020
+        ]
+      }
+    },
+    "h28": {
+      "text": "毎日 9:00–19:00",
+      "rows": [
+        {
+          "day": "毎日",
+          "time": "9:00–19:00"
+        }
+      ],
+      "open": {
+        "weekday": [
+          540,
+          1140
+        ],
+        "saturday": [
+          540,
+          1140
+        ],
+        "sunday": [
+          540,
+          1140
+        ],
+        "holiday": [
+          540,
           1140
         ]
       }
     },
-    "appt": {
-      "text": "相談受付 9:00–21:00（年中無休）",
+    "h29": {
+      "text": "毎日 9:00–21:00",
       "rows": [
         {
-          "day": "月〜金",
-          "time": "9:00–21:00"
-        },
-        {
-          "day": "土・日・祝",
+          "day": "毎日",
           "time": "9:00–21:00"
         }
       ],
@@ -262,7 +906,8 @@
       "住所・氏名変更": "ご住所の変更はマイページから24時間お手続き可能。お名前の変更は本人確認書類が必要です。",
       "受取人・払込変更": "受取人の変更は所定の請求書、保険料の払込方法・口座変更はマイページが便利です。",
       "口座振替→クレカ": "お支払い方法を口座振替からクレジットカード払いへ変更するお手続きです。マイページまたはお電話で承ります（商品・カードにより取扱いが異なります）。",
-      "クレカ変更": "ご登録中のクレジットカードの変更（カード番号・有効期限の更新を含む）のお手続きです。マイページからのお手続きが便利です。"
+      "クレカ変更": "ご登録中のクレジットカードの変更（カード番号・有効期限の更新を含む）のお手続きです。マイページからのお手続きが便利です。",
+      "保険料控除証明書再発行": "保険料控除証明書（年末調整・確定申告用）の再発行のお手続きです。お電話・マイページで受付し、再発行分は郵送でお届けします。10〜12月は混み合います。"
     },
     "nonlife": {
       "解約": "中途解約のお手続きです。自動車保険は等級の引継ぎ・解約返戻金にご注意ください。",
@@ -270,7 +915,8 @@
       "住所・氏名変更": "ご住所・お車・補償内容の変更はマイページまたはお電話で承ります。",
       "受取人・払込変更": "保険料の払込方法・口座の変更、契約条件の変更を承ります。",
       "口座振替→クレカ": "保険料のお支払いを口座振替からクレジットカード払いへ変更するお手続きです。マイページまたはお電話で承ります（商品・カードにより取扱いが異なります）。",
-      "クレカ変更": "ご登録中のクレジットカードの変更（カード番号・有効期限の更新を含む）のお手続きです。マイページからのお手続きが便利です。"
+      "クレカ変更": "ご登録中のクレジットカードの変更（カード番号・有効期限の更新を含む）のお手続きです。マイページからのお手続きが便利です。",
+      "保険料控除証明書再発行": "地震保険料控除証明書など控除対象の保険のみ再発行できます。多くの損害保険は保険料控除の対象外です。対象可否はお電話・公式サイトでご確認ください。"
     },
     "kyosai": {
       "解約": "共済契約の解約（脱退）のお手続きです。割戻金・解約手当金は契約により異なります。",
@@ -278,7 +924,8 @@
       "住所・氏名変更": "ご住所・お名前の変更はお電話または窓口で承ります。",
       "受取人・払込変更": "加入内容の変更・掛金の払込方法変更を承ります。",
       "口座振替→クレカ": "掛金のお支払いを口座振替からクレジットカード払いへ変更するお手続きです。お電話または窓口で承ります（団体・商品により取扱いが異なります）。",
-      "クレカ変更": "ご登録中のクレジットカードの変更（カード番号・有効期限の更新を含む）のお手続きです。お電話または窓口で承ります。"
+      "クレカ変更": "ご登録中のクレジットカードの変更（カード番号・有効期限の更新を含む）のお手続きです。お電話または窓口で承ります。",
+      "保険料控除証明書再発行": "共済掛金の控除証明書（生命共済・地震等の控除対象となる共済）の再発行のお手続きです。お電話・マイページで承ります。"
     },
     "mini": {
       "解約": "解約はお電話または書面でのお手続きです。少額短期保険は掛捨て型が中心で返戻金がない場合があります。",
@@ -286,7 +933,8 @@
       "住所・氏名変更": "ご住所・お名前の変更はマイページまたはお電話で承ります。",
       "受取人・払込変更": "受取人の変更・保険料の支払方法変更を承ります。",
       "口座振替→クレカ": "保険料のお支払いを口座振替からクレジットカード払いへ変更するお手続きです。マイページまたはお電話で承ります（商品・カードにより取扱いが異なります）。",
-      "クレカ変更": "ご登録中のクレジットカードの変更（カード番号・有効期限の更新を含む）のお手続きです。マイページからのお手続きが便利です。"
+      "クレカ変更": "ご登録中のクレジットカードの変更（カード番号・有効期限の更新を含む）のお手続きです。マイページからのお手続きが便利です。",
+      "保険料控除証明書再発行": "少額短期保険は原則として保険料控除の対象外のため、控除証明書は発行されません。詳細は各社の公式サイト・お電話でご確認ください。"
     },
     "agency": {
       "解約": "代理店はご契約のご相談・お取次ぎ窓口です。解約のお手続き・解約返戻金のご確認は、ご契約の引受保険会社で行います。担当者・店舗がご案内します。",
@@ -294,7 +942,8 @@
       "住所・氏名変更": "ご住所・お名前の変更は、担当代理店または引受保険会社へご連絡ください。",
       "受取人・払込変更": "受取人・払込方法の変更は、担当代理店経由または引受保険会社でお手続きいただけます。",
       "口座振替→クレカ": "お支払い方法の変更可否は引受保険会社により異なります。担当代理店または各保険会社へご確認ください。",
-      "クレカ変更": "ご登録クレジットカードの変更は引受保険会社でのお手続きとなります。担当代理店がご案内します。"
+      "クレカ変更": "ご登録クレジットカードの変更は引受保険会社でのお手続きとなります。担当代理店がご案内します。",
+      "保険料控除証明書再発行": "控除証明書はご契約の引受保険会社が発行します。代理店では発行できないため、ご契約先の保険会社の窓口へお問い合わせください。"
     }
   },
   "companies": [
@@ -305,7 +954,7 @@
       "category": "nonlife",
       "brandColor": "#d70c19",
       "initials": "東海\n日動",
-      "hoursKey": "sat",
+      "hoursKey": "h01",
       "host": "www.tokiomarine-nichido.co.jp",
       "officialUrl": "https://www.tokiomarine-nichido.co.jp",
       "mypageUrl": "https://www.tokiomarine-nichido.co.jp/service/contractor/keiyakusyasama.html",
@@ -324,7 +973,7 @@
       "category": "nonlife",
       "brandColor": "#e60000",
       "initials": "損保\nJ",
-      "hoursKey": "sat",
+      "hoursKey": "h02",
       "host": "www.sompo-japan.co.jp",
       "officialUrl": "https://www.sompo-japan.co.jp",
       "mypageUrl": "https://www.sompo-japan.co.jp/mypage/",
@@ -347,7 +996,7 @@
       "category": "nonlife",
       "brandColor": "#0098d8",
       "initials": "三井\n住友",
-      "hoursKey": "sat",
+      "hoursKey": "h03",
       "host": "www.ms-ins.com",
       "officialUrl": "https://www.ms-ins.com",
       "mypageUrl": "https://www.ms-ins.com/personal/web_service/",
@@ -370,7 +1019,7 @@
       "category": "nonlife",
       "brandColor": "#e50012",
       "initials": "あい\nおい",
-      "hoursKey": "sat",
+      "hoursKey": "h03",
       "host": "www.aioinissaydowa.co.jp",
       "officialUrl": "https://www.aioinissaydowa.co.jp",
       "mypageUrl": "https://www.aioinissaydowa.co.jp/customer/web_service/first.html",
@@ -393,7 +1042,7 @@
       "category": "nonlife",
       "brandColor": "#0a4a9e",
       "initials": "共栄\n火災",
-      "hoursKey": "wk17",
+      "hoursKey": "h04",
       "host": "www.kyoeikasai.co.jp",
       "officialUrl": "https://www.kyoeikasai.co.jp",
       "mypageUrl": "https://www.kyoeikasai.co.jp/kymp/",
@@ -412,7 +1061,7 @@
       "category": "nonlife",
       "brandColor": "#e2001a",
       "initials": "日新\n火災",
-      "hoursKey": "wk17",
+      "hoursKey": "h03",
       "host": "www.nisshinfire.co.jp",
       "officialUrl": "https://www.nisshinfire.co.jp",
       "mypageUrl": "https://www.nisshinfire.co.jp/mynisshin/",
@@ -431,7 +1080,7 @@
       "category": "nonlife",
       "brandColor": "#00a0aa",
       "initials": "大同\n火災",
-      "hoursKey": "wk17",
+      "hoursKey": "h05",
       "host": "www.daidokasai.co.jp",
       "officialUrl": "https://www.daidokasai.co.jp",
       "mypageUrl": "https://www.daidokasai.co.jp/contractor/",
@@ -450,7 +1099,7 @@
       "category": "nonlife",
       "brandColor": "#009a44",
       "initials": "SECOM",
-      "hoursKey": "sat",
+      "hoursKey": "h04",
       "host": "www.secom-sonpo.co.jp",
       "officialUrl": "https://www.secom-sonpo.co.jp",
       "mypageUrl": "https://www.secom-sonpo.co.jp/mypage/",
@@ -469,7 +1118,7 @@
       "category": "nonlife",
       "brandColor": "#0a1a72",
       "initials": "AIG",
-      "hoursKey": "sat",
+      "hoursKey": "h06",
       "host": "aig.co.jp",
       "officialUrl": "https://aig.co.jp/sonpo",
       "mypageUrl": "https://www.aig.co.jp/sonpo/contractor",
@@ -488,7 +1137,7 @@
       "category": "nonlife",
       "brandColor": "#1f3a93",
       "initials": "明治\n安田",
-      "hoursKey": "wk17",
+      "hoursKey": "h07",
       "host": "www.meijiyasuda-sonpo.co.jp",
       "officialUrl": "https://www.meijiyasuda-sonpo.co.jp",
       "mypageUrl": "https://www.meijiyasuda-sonpo.co.jp",
@@ -507,7 +1156,7 @@
       "category": "nonlife",
       "brandColor": "#1a1a1a",
       "initials": "SONY",
-      "hoursKey": "long",
+      "hoursKey": "h01",
       "host": "www.sonysonpo.co.jp",
       "officialUrl": "https://www.sonysonpo.co.jp/",
       "mypageUrl": "https://www.sonysonpo.co.jp/",
@@ -526,7 +1175,7 @@
       "category": "nonlife",
       "brandColor": "#00008f",
       "initials": "AXA",
-      "hoursKey": "long",
+      "hoursKey": "h08",
       "host": "axa-direct.co.jp",
       "officialUrl": "https://axa-direct.co.jp",
       "mypageUrl": "https://www.axa-direct.co.jp/eCAM/StaticDispatcher/StaticDispatcher.aspx?entry=login",
@@ -545,7 +1194,7 @@
       "category": "nonlife",
       "brandColor": "#003f98",
       "initials": "三井\nｄ",
-      "hoursKey": "long",
+      "hoursKey": "h09",
       "host": "www.mitsui-direct.co.jp",
       "officialUrl": "https://www.mitsui-direct.co.jp",
       "mypageUrl": "https://www.mitsui-direct.co.jp/customer/",
@@ -564,7 +1213,7 @@
       "category": "nonlife",
       "brandColor": "#00539b",
       "initials": "SBI",
-      "hoursKey": "long",
+      "hoursKey": "h10",
       "host": "www.sbisonpo.co.jp",
       "officialUrl": "https://www.sbisonpo.co.jp",
       "mypageUrl": "https://www.sbisonpo.co.jp/car/members/",
@@ -583,7 +1232,7 @@
       "category": "nonlife",
       "brandColor": "#eb5505",
       "initials": "au",
-      "hoursKey": "long",
+      "hoursKey": "h01",
       "host": "www.au-sonpo.co.jp",
       "officialUrl": "https://www.au-sonpo.co.jp",
       "mypageUrl": "https://www.au-sonpo.co.jp/mypage/",
@@ -602,7 +1251,7 @@
       "category": "nonlife",
       "brandColor": "#bf0000",
       "initials": "楽天",
-      "hoursKey": "long",
+      "hoursKey": "h01",
       "host": "www.rakuten-sonpo.co.jp",
       "officialUrl": "https://www.rakuten-sonpo.co.jp",
       "mypageUrl": "https://www.rakuten-sonpo.co.jp/tabid/462/Default.aspx",
@@ -621,7 +1270,7 @@
       "category": "nonlife",
       "brandColor": "#e60012",
       "initials": "E\nDESIGN",
-      "hoursKey": "long",
+      "hoursKey": "h01",
       "host": "e-design.net",
       "officialUrl": "https://e-design.net",
       "mypageUrl": "https://www.e-design.net/ande/contractor/",
@@ -640,7 +1289,7 @@
       "category": "nonlife",
       "brandColor": "#e60000",
       "initials": "SOMPO\nｄ",
-      "hoursKey": "long",
+      "hoursKey": "h11",
       "host": "www.sompo-direct.co.jp",
       "officialUrl": "https://www.sompo-direct.co.jp",
       "mypageUrl": "https://www.sompo-direct.co.jp/mypage_contract/base/login/login",
@@ -659,7 +1308,7 @@
       "category": "nonlife",
       "brandColor": "#cc0033",
       "initials": "docomo",
-      "hoursKey": "long",
+      "hoursKey": "h12",
       "host": "www.docomo-sompo.com",
       "officialUrl": "https://www.docomo-sompo.com",
       "mypageUrl": "https://www.docomo-sompo.com",
@@ -673,7 +1322,7 @@
       "category": "nonlife",
       "brandColor": "#ec6c00",
       "initials": "ani\ncom",
-      "hoursKey": "sat",
+      "hoursKey": "h13",
       "host": "www.anicom-sompo.co.jp",
       "officialUrl": "https://www.anicom-sompo.co.jp",
       "mypageUrl": "https://www.anicom-sompo.co.jp/customers/",
@@ -692,7 +1341,7 @@
       "category": "nonlife",
       "brandColor": "#5b9bd5",
       "initials": "iPet",
-      "hoursKey": "sat",
+      "hoursKey": "h14",
       "host": "www.ipet-ins.com",
       "officialUrl": "https://www.ipet-ins.com",
       "mypageUrl": "https://mypage.ipet-ins.com/login/",
@@ -711,7 +1360,7 @@
       "category": "nonlife",
       "brandColor": "#5fa83a",
       "initials": "P&F",
-      "hoursKey": "sat",
+      "hoursKey": "h05",
       "host": "petfamilyins.co.jp",
       "officialUrl": "https://petfamilyins.co.jp",
       "mypageUrl": "https://mp1.petfamilyins.co.jp/exex-pafWeb-MyPage/login",
@@ -730,7 +1379,7 @@
       "category": "nonlife",
       "brandColor": "#003da5",
       "initials": "J/I",
-      "hoursKey": "sat",
+      "hoursKey": "ask",
       "host": "www.jihoken.co.jp",
       "officialUrl": "https://www.jihoken.co.jp",
       "mypageUrl": "https://www.jihoken.co.jp/mypage/mypage/",
@@ -749,7 +1398,7 @@
       "category": "nonlife",
       "brandColor": "#1f6f54",
       "initials": "Cap\nital",
-      "hoursKey": "wk17",
+      "hoursKey": "h05",
       "host": "www.capital-sonpo.co.jp",
       "officialUrl": "https://www.capital-sonpo.co.jp",
       "mypageUrl": "https://www.capital-sonpo.co.jp",
@@ -768,7 +1417,7 @@
       "category": "nonlife",
       "brandColor": "#d6336c",
       "initials": "H.S.",
-      "hoursKey": "wk17",
+      "hoursKey": "h05",
       "host": "www.hs-sonpo.co.jp",
       "officialUrl": "https://www.hs-sonpo.co.jp",
       "mypageUrl": "https://mypage.hs-sonpo.co.jp/login",
@@ -787,7 +1436,7 @@
       "category": "nonlife",
       "brandColor": "#6f42c1",
       "initials": "全管\n協",
-      "hoursKey": "wk17",
+      "hoursKey": "h04",
       "host": "zkreiwa-sonpo.co.jp",
       "officialUrl": "https://zkreiwa-sonpo.co.jp",
       "mypageUrl": "https://zkreiwa-sonpo.co.jp",
@@ -806,7 +1455,7 @@
       "category": "nonlife",
       "brandColor": "#e83e8c",
       "initials": "さくら",
-      "hoursKey": "wk17",
+      "hoursKey": "h05",
       "host": "sakura-ins.co.jp",
       "officialUrl": "https://sakura-ins.co.jp",
       "mypageUrl": "https://sakura-ins.co.jp",
@@ -825,7 +1474,7 @@
       "category": "nonlife",
       "brandColor": "#2f9e44",
       "initials": "YAMAP",
-      "hoursKey": "sat",
+      "hoursKey": "h15",
       "host": "yamap-naturance.co.jp",
       "officialUrl": "https://yamap-naturance.co.jp",
       "mypageUrl": "https://yamap-naturance.co.jp",
@@ -844,7 +1493,7 @@
       "category": "nonlife",
       "brandColor": "#d9480f",
       "initials": "RES\nCUE",
-      "hoursKey": "wk17",
+      "hoursKey": "h16",
       "host": "rescue-sonpo.jp",
       "officialUrl": "https://rescue-sonpo.jp",
       "mypageUrl": "https://rescue-sonpo.jp",
@@ -863,7 +1512,7 @@
       "category": "life",
       "brandColor": "#c8102e",
       "initials": "日本\n生命",
-      "hoursKey": "sat",
+      "hoursKey": "h17",
       "host": "www.nissay.co.jp",
       "officialUrl": "https://www.nissay.co.jp",
       "mypageUrl": "https://www.nissay.co.jp/keiyaku/senyo/login/",
@@ -882,7 +1531,7 @@
       "category": "life",
       "brandColor": "#d4002a",
       "initials": "第一\n生命",
-      "hoursKey": "sat",
+      "hoursKey": "h17",
       "host": "www.dai-ichi-life.co.jp",
       "officialUrl": "https://www.dai-ichi-life.co.jp",
       "mypageUrl": "https://www.dai-ichi-life.co.jp/contractor/index.html",
@@ -901,7 +1550,7 @@
       "category": "life",
       "brandColor": "#1f3a93",
       "initials": "明治\n安田",
-      "hoursKey": "sat",
+      "hoursKey": "h17",
       "host": "www.meijiyasuda.co.jp",
       "officialUrl": "https://www.meijiyasuda.co.jp",
       "mypageUrl": "https://my1.meijiyasuda.co.jp/login.html",
@@ -920,7 +1569,7 @@
       "category": "life",
       "brandColor": "#007a3d",
       "initials": "住友\n生命",
-      "hoursKey": "sat",
+      "hoursKey": "h17",
       "host": "www.sumitomolife.co.jp",
       "officialUrl": "https://www.sumitomolife.co.jp",
       "mypageUrl": "https://www.sumitomolife.co.jp/login/",
@@ -939,7 +1588,7 @@
       "category": "life",
       "brandColor": "#008a35",
       "initials": "かんぽ",
-      "hoursKey": "sat",
+      "hoursKey": "h18",
       "host": "jp-life.japanpost.jp",
       "officialUrl": "https://jp-life.japanpost.jp",
       "mypageUrl": "https://www.jp-life.japanpost.jp/mypage/",
@@ -958,7 +1607,7 @@
       "category": "life",
       "brandColor": "#f08300",
       "initials": "太陽\n生命",
-      "hoursKey": "sat",
+      "hoursKey": "h17",
       "host": "www.taiyo-seimei.co.jp",
       "officialUrl": "https://www.taiyo-seimei.co.jp",
       "mypageUrl": "https://www.taiyo-seimei.co.jp/customer/mypage/index.html",
@@ -977,7 +1626,7 @@
       "category": "life",
       "brandColor": "#e60012",
       "initials": "大同\n生命",
-      "hoursKey": "sat",
+      "hoursKey": "h05",
       "host": "www.daido-life.co.jp",
       "officialUrl": "https://www.daido-life.co.jp",
       "mypageUrl": "https://www.daido-life.co.jp/c_keiyaku/",
@@ -996,7 +1645,7 @@
       "category": "life",
       "brandColor": "#00529b",
       "initials": "富国\n生命",
-      "hoursKey": "sat",
+      "hoursKey": "h05",
       "host": "www.fukoku-life.co.jp",
       "officialUrl": "https://www.fukoku-life.co.jp",
       "mypageUrl": "https://www.fukoku-life.co.jp/contract/mypage/",
@@ -1015,7 +1664,7 @@
       "category": "life",
       "brandColor": "#e60012",
       "initials": "朝日\n生命",
-      "hoursKey": "sat",
+      "hoursKey": "h19",
       "host": "www.asahi-life.co.jp",
       "officialUrl": "https://www.asahi-life.co.jp",
       "mypageUrl": "https://www.asahi-life.co.jp/service/mypage/index.html",
@@ -1034,7 +1683,7 @@
       "category": "life",
       "brandColor": "#1a5276",
       "initials": "大樹\n生命",
-      "hoursKey": "sat",
+      "hoursKey": "h04",
       "host": "www.taiju-life.co.jp",
       "officialUrl": "https://www.taiju-life.co.jp",
       "mypageUrl": "https://www.taiju-life.co.jp/mypage/",
@@ -1053,7 +1702,7 @@
       "category": "life",
       "brandColor": "#00529b",
       "initials": "AFLAC",
-      "hoursKey": "sat",
+      "hoursKey": "h17",
       "host": "www.aflac.co.jp",
       "officialUrl": "https://www.aflac.co.jp",
       "mypageUrl": "https://www.aflac.co.jp",
@@ -1072,7 +1721,7 @@
       "category": "life",
       "brandColor": "#0090c5",
       "initials": "Met\nLife",
-      "hoursKey": "sat",
+      "hoursKey": "h09",
       "host": "www.metlife.co.jp",
       "officialUrl": "https://www.metlife.co.jp",
       "mypageUrl": "https://www.metlife.co.jp/login/",
@@ -1095,7 +1744,7 @@
       "category": "life",
       "brandColor": "#1a1a1a",
       "initials": "SONY",
-      "hoursKey": "sat",
+      "hoursKey": "h20",
       "host": "www.sonylife.co.jp",
       "officialUrl": "https://www.sonylife.co.jp",
       "mypageUrl": "https://cs.sonylife.co.jp/lpv/pcms/sca/ct/registration/login.html",
@@ -1114,7 +1763,7 @@
       "category": "life",
       "brandColor": "#00467f",
       "initials": "Pru",
-      "hoursKey": "sat",
+      "hoursKey": "h21",
       "host": "www.prudential.co.jp",
       "officialUrl": "https://www.prudential.co.jp",
       "mypageUrl": "https://www.prudential.co.jp/contractor/mypage/",
@@ -1133,7 +1782,7 @@
       "category": "life",
       "brandColor": "#b8101f",
       "initials": "Gib",
-      "hoursKey": "sat",
+      "hoursKey": "h17",
       "host": "www.gib-life.co.jp",
       "officialUrl": "https://www.gib-life.co.jp",
       "mypageUrl": "https://www.gib-life.co.jp/st/portal.html",
@@ -1152,7 +1801,7 @@
       "category": "life",
       "brandColor": "#00008f",
       "initials": "AXA",
-      "hoursKey": "sat",
+      "hoursKey": "h17",
       "host": "axa.co.jp",
       "officialUrl": "https://axa.co.jp",
       "mypageUrl": "https://myweb.axa.co.jp/login",
@@ -1171,7 +1820,7 @@
       "category": "life",
       "brandColor": "#00508f",
       "initials": "あん\nしん",
-      "hoursKey": "sat",
+      "hoursKey": "h17",
       "host": "www.tmn-anshin.co.jp",
       "officialUrl": "https://www.tmn-anshin.co.jp",
       "mypageUrl": "https://www.tmn-anshin.co.jp/keiyaku/mypage/",
@@ -1190,7 +1839,7 @@
       "category": "life",
       "brandColor": "#0098d8",
       "initials": "MSA",
-      "hoursKey": "sat",
+      "hoursKey": "h17",
       "host": "www.msa-life.co.jp",
       "officialUrl": "https://www.msa-life.co.jp",
       "mypageUrl": "https://www.msa-life.co.jp/customer/service/",
@@ -1209,7 +1858,7 @@
       "category": "life",
       "brandColor": "#ec6c00",
       "initials": "ひま\nわり",
-      "hoursKey": "sat",
+      "hoursKey": "h17",
       "host": "www.himawari-life.co.jp",
       "officialUrl": "https://www.himawari-life.co.jp",
       "mypageUrl": "https://www.himawari-life.co.jp/customer/",
@@ -1228,7 +1877,7 @@
       "category": "life",
       "brandColor": "#003d7a",
       "initials": "ORIX",
-      "hoursKey": "sat",
+      "hoursKey": "h09",
       "host": "www.orixlife.co.jp",
       "officialUrl": "https://www.orixlife.co.jp",
       "mypageUrl": "https://www.orixlife.co.jp/customer/mypage/",
@@ -1251,7 +1900,7 @@
       "category": "life",
       "brandColor": "#f08300",
       "initials": "Life\nNet",
-      "hoursKey": "sat",
+      "hoursKey": "h22",
       "host": "www.lifenet-seimei.co.jp",
       "officialUrl": "https://www.lifenet-seimei.co.jp",
       "mypageUrl": "https://www.lifenet-seimei.co.jp/customer/",
@@ -1270,7 +1919,7 @@
       "category": "life",
       "brandColor": "#e84393",
       "initials": "はな\nさく",
-      "hoursKey": "sat",
+      "hoursKey": "h09",
       "host": "www.life8739.co.jp",
       "officialUrl": "https://www.life8739.co.jp",
       "mypageUrl": "https://c.life8739.co.jp/",
@@ -1289,7 +1938,7 @@
       "category": "life",
       "brandColor": "#00a884",
       "initials": "第一\nNeo",
-      "hoursKey": "sat",
+      "hoursKey": "h19",
       "host": "neofirst.co.jp",
       "officialUrl": "https://neofirst.co.jp",
       "mypageUrl": "https://neofirst.co.jp/customer/",
@@ -1308,7 +1957,7 @@
       "category": "life",
       "brandColor": "#0984e3",
       "initials": "Medi\ncare",
-      "hoursKey": "sat",
+      "hoursKey": "h23",
       "host": "medicarelife.com",
       "officialUrl": "https://medicarelife.com",
       "mypageUrl": "https://www.medicarelife.com/mypage-guide/",
@@ -1327,7 +1976,7 @@
       "category": "life",
       "brandColor": "#0033a0",
       "initials": "Zurich",
-      "hoursKey": "sat",
+      "hoursKey": "h09",
       "host": "www.zurichlife.co.jp",
       "officialUrl": "https://www.zurichlife.co.jp",
       "mypageUrl": "https://service.zurichlife.co.jp/zlife/ZOL_Login",
@@ -1346,7 +1995,7 @@
       "category": "life",
       "brandColor": "#e67817",
       "initials": "FWD",
-      "hoursKey": "sat",
+      "hoursKey": "h04",
       "host": "www.fwdlife.co.jp",
       "officialUrl": "https://www.fwdlife.co.jp",
       "mypageUrl": "https://www.fwdlife.co.jp",
@@ -1365,7 +2014,7 @@
       "category": "life",
       "brandColor": "#00853f",
       "initials": "Manu\nlife",
-      "hoursKey": "sat",
+      "hoursKey": "h05",
       "host": "www.manulife.co.jp",
       "officialUrl": "https://www.manulife.co.jp/ja/individual.html",
       "mypageUrl": "https://mypage.manulife.co.jp/",
@@ -1388,7 +2037,7 @@
       "category": "life",
       "brandColor": "#00539b",
       "initials": "SBI",
-      "hoursKey": "sat",
+      "hoursKey": "h04",
       "host": "www.sbilife.co.jp",
       "officialUrl": "https://www.sbilife.co.jp",
       "mypageUrl": "https://www.ebiz.sbilife.co.jp/mypage/login",
@@ -1407,7 +2056,7 @@
       "category": "life",
       "brandColor": "#bf0000",
       "initials": "楽天\n生命",
-      "hoursKey": "sat",
+      "hoursKey": "h01",
       "host": "www.rakuten-insurance.co.jp",
       "officialUrl": "https://www.rakuten-insurance.co.jp",
       "mypageUrl": "https://www.rakuten-insurance.co.jp",
@@ -1426,7 +2075,7 @@
       "category": "life",
       "brandColor": "#c0398e",
       "initials": "なな\nいろ",
-      "hoursKey": "sat",
+      "hoursKey": "h19",
       "host": "www.nanairolife.co.jp",
       "officialUrl": "https://www.nanairolife.co.jp",
       "mypageUrl": "https://www.nanairolife.co.jp",
@@ -1449,7 +2098,7 @@
       "category": "life",
       "brandColor": "#d4002a",
       "initials": "第一\nFr",
-      "hoursKey": "sat",
+      "hoursKey": "h05",
       "host": "www.d-frontier-life.co.jp",
       "officialUrl": "https://www.d-frontier-life.co.jp",
       "mypageUrl": "https://www.d-frontier-life.co.jp/ky/",
@@ -1468,7 +2117,7 @@
       "category": "life",
       "brandColor": "#1a5276",
       "initials": "T&D",
-      "hoursKey": "sat",
+      "hoursKey": "h05",
       "host": "www.tdf-life.co.jp",
       "officialUrl": "https://www.tdf-life.co.jp",
       "mypageUrl": "https://www.tdf-life.co.jp/service/",
@@ -1487,7 +2136,7 @@
       "category": "life",
       "brandColor": "#ee7203",
       "initials": "NN",
-      "hoursKey": "sat",
+      "hoursKey": "h05",
       "host": "nnlife.co.jp",
       "officialUrl": "https://nnlife.co.jp",
       "mypageUrl": "https://www.nnlife.co.jp/customer_login",
@@ -1506,7 +2155,7 @@
       "category": "life",
       "brandColor": "#00915a",
       "initials": "Car\ndif",
-      "hoursKey": "sat",
+      "hoursKey": "h04",
       "host": "life.cardif.co.jp",
       "officialUrl": "https://life.cardif.co.jp",
       "mypageUrl": "https://life.cardif.co.jp",
@@ -1525,7 +2174,7 @@
       "category": "life",
       "brandColor": "#006a4e",
       "initials": "CA",
-      "hoursKey": "sat",
+      "hoursKey": "h05",
       "host": "ca-life.jp",
       "officialUrl": "https://ca-life.jp",
       "mypageUrl": "https://mypage.ca-life.jp/",
@@ -1544,7 +2193,7 @@
       "category": "life",
       "brandColor": "#1a3c8c",
       "initials": "NW",
-      "hoursKey": "sat",
+      "hoursKey": "h05",
       "host": "www.nw-life.co.jp",
       "officialUrl": "https://www.nw-life.co.jp",
       "mypageUrl": "https://www.nw-life.co.jp",
@@ -1563,7 +2212,7 @@
       "category": "life",
       "brandColor": "#0a6cb0",
       "initials": "しん\nらい",
-      "hoursKey": "sat",
+      "hoursKey": "h04",
       "host": "www.fukokushinrai.co.jp",
       "officialUrl": "https://www.fukokushinrai.co.jp",
       "mypageUrl": "https://www.fukokushinrai.co.jp",
@@ -1582,7 +2231,7 @@
       "category": "life",
       "brandColor": "#00467f",
       "initials": "PGF",
-      "hoursKey": "sat",
+      "hoursKey": "h17",
       "host": "www.pgf-life.co.jp",
       "officialUrl": "https://www.pgf-life.co.jp",
       "mypageUrl": "https://www.pgf-life.co.jp/mypage/index.html",
@@ -1601,7 +2250,7 @@
       "category": "life",
       "brandColor": "#0098d8",
       "initials": "MSP",
-      "hoursKey": "sat",
+      "hoursKey": "h05",
       "host": "www.ms-primary.com",
       "officialUrl": "https://www.ms-primary.com",
       "mypageUrl": "https://msp.ms-primary.com/p/Login",
@@ -1620,7 +2269,7 @@
       "category": "life",
       "brandColor": "#43a047",
       "initials": "みどり",
-      "hoursKey": "sat",
+      "hoursKey": "h05",
       "host": "midori-life.com",
       "officialUrl": "https://midori-life.com",
       "mypageUrl": "https://midori-life.com",
@@ -1639,7 +2288,7 @@
       "category": "life",
       "brandColor": "#1f3a93",
       "initials": "明安\nT",
-      "hoursKey": "sat",
+      "hoursKey": "h17",
       "host": "www.meijiyasuda-trustlife.co.jp",
       "officialUrl": "https://www.meijiyasuda-trustlife.co.jp",
       "mypageUrl": "https://www.meijiyasuda-trustlife.co.jp/aali-customer/mypage/",
@@ -1658,7 +2307,7 @@
       "category": "kyosai",
       "brandColor": "#007c36",
       "initials": "JA",
-      "hoursKey": "wk17",
+      "hoursKey": "h17",
       "host": "www.ja-kyosai.or.jp",
       "officialUrl": "https://www.ja-kyosai.or.jp",
       "mypageUrl": "https://www.ja-kyosai.or.jp/gokeiyaku/onlineservice/",
@@ -1672,7 +2321,7 @@
       "category": "kyosai",
       "brandColor": "#f29600",
       "initials": "こく\nみん",
-      "hoursKey": "sat",
+      "hoursKey": "h09",
       "host": "www.zenrosai.coop",
       "officialUrl": "https://www.zenrosai.coop",
       "mypageUrl": "https://www.mypage.zenrosai.coop/login",
@@ -1686,7 +2335,7 @@
       "category": "kyosai",
       "brandColor": "#009a44",
       "initials": "県民\n共済",
-      "hoursKey": "wk17",
+      "hoursKey": "ask",
       "host": "www.kyosai-cc.or.jp",
       "officialUrl": "https://www.kyosai-cc.or.jp",
       "mypageUrl": "https://www.kyosai-cc.or.jp/mypage.html",
@@ -1700,7 +2349,7 @@
       "category": "kyosai",
       "brandColor": "#e95513",
       "initials": "CO\nOP",
-      "hoursKey": "sat",
+      "hoursKey": "h24",
       "host": "coopkyosai.coop",
       "officialUrl": "https://coopkyosai.coop",
       "mypageUrl": "https://mypage.coopkyosai.coop/login/",
@@ -1714,7 +2363,7 @@
       "category": "kyosai",
       "brandColor": "#2d6a9f",
       "initials": "教職\n員",
-      "hoursKey": "wk17",
+      "hoursKey": "h07",
       "host": "www.kyousyokuin.or.jp",
       "officialUrl": "https://www.kyousyokuin.or.jp",
       "mypageUrl": "https://www.kyousyokuin.or.jp/mypage/Start.aspx",
@@ -1728,7 +2377,7 @@
       "category": "mini",
       "brandColor": "#00539b",
       "initials": "いき\nいき",
-      "hoursKey": "long",
+      "hoursKey": "h25",
       "host": "www.i-sedai.com",
       "officialUrl": "https://www.i-sedai.com/",
       "mypageUrl": "https://www.i-sedai.com/",
@@ -1742,7 +2391,7 @@
       "category": "mini",
       "brandColor": "#7a3aa8",
       "initials": "aial",
-      "hoursKey": "wk17",
+      "hoursKey": "h26",
       "host": "www.air-ins.co.jp",
       "officialUrl": "https://www.air-ins.co.jp/",
       "mypageUrl": "https://www.air-ins.co.jp/",
@@ -1756,7 +2405,7 @@
       "category": "mini",
       "brandColor": "#ff5a5f",
       "initials": "jIC",
-      "hoursKey": "long",
+      "hoursKey": "ask",
       "host": "justincase.jp",
       "officialUrl": "https://justincase.jp",
       "mypageUrl": "https://portal.justincase.jp/",
@@ -1770,7 +2419,7 @@
       "category": "mini",
       "brandColor": "#16a085",
       "initials": "ぜん\nち",
-      "hoursKey": "wk17",
+      "hoursKey": "h05",
       "host": "www.z-kyosai.com",
       "officialUrl": "https://www.z-kyosai.com/",
       "mypageUrl": "https://www.z-kyosai.com/",
@@ -1784,7 +2433,7 @@
       "category": "mini",
       "brandColor": "#8e44ad",
       "initials": "EXL",
-      "hoursKey": "wk17",
+      "hoursKey": "h05",
       "host": "www.ansin-ssi.com",
       "officialUrl": "https://www.ansin-ssi.com/customer/excelaid/",
       "mypageUrl": "https://www.ansin-ssi.com/customer/excelaid/",
@@ -1798,7 +2447,7 @@
       "category": "agency",
       "brandColor": "#e8380d",
       "initials": "窓口",
-      "hoursKey": "shop",
+      "hoursKey": "h27",
       "host": "www.hokennomadoguchi.com",
       "officialUrl": "https://www.hokennomadoguchi.com",
       "mypageUrl": "https://mypage.hokennomadoguchi.com/login",
@@ -1812,7 +2461,7 @@
       "category": "agency",
       "brandColor": "#0a8a4a",
       "initials": "見直\n本舗",
-      "hoursKey": "shop",
+      "hoursKey": "h01",
       "host": "www.hokepon.com",
       "officialUrl": "https://www.hokepon.com/",
       "mypageUrl": "https://www.hokepon.com/support/",
@@ -1826,7 +2475,7 @@
       "category": "agency",
       "brandColor": "#0a6cb0",
       "initials": "保険\nｸﾘﾆｯｸ",
-      "hoursKey": "shop",
+      "hoursKey": "h28",
       "host": "hoken-clinic.com",
       "officialUrl": "https://hoken-clinic.com",
       "mypageUrl": "https://app.hoken-clinic.com/mypage/",
@@ -1840,7 +2489,7 @@
       "category": "agency",
       "brandColor": "#c8102e",
       "initials": "保険\n市場",
-      "hoursKey": "shop",
+      "hoursKey": "h29",
       "host": "www.hokende.com",
       "officialUrl": "https://www.hokende.com/",
       "mypageUrl": "https://www.hokende.com/mypage/login",
@@ -1854,7 +2503,7 @@
       "category": "agency",
       "brandColor": "#e6007e",
       "initials": "イオン",
-      "hoursKey": "shop",
+      "hoursKey": "h01",
       "host": "www.hokenmarket.net",
       "officialUrl": "https://www.hokenmarket.net/",
       "mypageUrl": "https://www.hokenmarket.net/",
@@ -1868,7 +2517,7 @@
       "category": "agency",
       "brandColor": "#1f3a93",
       "initials": "Money\nDr",
-      "hoursKey": "appt",
+      "hoursKey": "h22",
       "host": "fp-moneydoctor.com",
       "officialUrl": "https://fp-moneydoctor.com/",
       "mypageUrl": "https://fp-moneydoctor.com/",
@@ -1882,7 +2531,7 @@
       "category": "agency",
       "brandColor": "#7a4a1f",
       "initials": "マン\nモス",
-      "hoursKey": "appt",
+      "hoursKey": "ask",
       "host": "hoken-mammoth.com",
       "officialUrl": "https://hoken-mammoth.com/leads/",
       "mypageUrl": "https://hoken-mammoth.com/leads/",
@@ -1896,7 +2545,7 @@
       "category": "agency",
       "brandColor": "#0d7a8a",
       "initials": "みんな\nの保険",
-      "hoursKey": "appt",
+      "hoursKey": "ask",
       "host": "www.41fp.com",
       "officialUrl": "https://www.41fp.com/",
       "mypageUrl": "https://www.41fp.com/",
