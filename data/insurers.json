@@ -897,6 +897,28 @@
           1260
         ]
       }
+    },
+    "h30": {
+      "text": "平日 9:00–19:00 ／土・日・祝 休業",
+      "rows": [
+        {
+          "day": "平日",
+          "time": "9:00–19:00"
+        },
+        {
+          "day": "土・日・祝",
+          "time": "休業"
+        }
+      ],
+      "open": {
+        "weekday": [
+          540,
+          1140
+        ],
+        "saturday": null,
+        "sunday": null,
+        "holiday": null
+      }
     }
   },
   "memos": {
@@ -2056,17 +2078,21 @@
       "category": "life",
       "brandColor": "#bf0000",
       "initials": "楽天\n生命",
-      "hoursKey": "h01",
-      "host": "www.rakuten-insurance.co.jp",
-      "officialUrl": "https://www.rakuten-insurance.co.jp",
-      "mypageUrl": "https://www.rakuten-insurance.co.jp",
+      "hoursKey": "h30",
+      "host": "www.rakuten-life.co.jp",
+      "officialUrl": "https://www.rakuten-life.co.jp",
+      "mypageUrl": "https://www.rakuten-life.co.jp/contractor/",
       "phones": [
         {
-          "label": "楽天保険の総合窓口",
-          "number": "0120-849-150"
+          "label": "カスタマーサービスセンター",
+          "number": "0120-977-010"
+        },
+        {
+          "label": "保険金・給付金請求",
+          "number": "0120-977-002"
         }
       ],
-      "verified": true
+      "verified": false
     },
     {
       "id": 58,
