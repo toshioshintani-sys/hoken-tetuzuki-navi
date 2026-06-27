@@ -45,6 +45,7 @@ type Company = {
   host: string;
   officialUrl: string;
   mypageUrl: string;
+  procedureUrl?: string | null;
   phones: Phone[];
   verified: boolean;
 };
@@ -387,7 +388,7 @@ function DetailDrawer({
                 <a
                   className={active ? 'procedure-guide__item is-active' : 'procedure-guide__item'}
                   key={procedure.key}
-                  href={company.officialUrl}
+                  href={company.procedureUrl || company.officialUrl}
                   target="_blank"
                   rel="noreferrer"
                 >
