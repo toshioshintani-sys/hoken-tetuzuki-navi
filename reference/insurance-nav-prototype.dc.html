@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{font-family:'Noto Sans JP',sans-serif;background:#eef1f6;color:#0d1626;-webkit-font-smoothing:antialiased}
+  ::selection{background:#c7d6ff;color:#0d1626}
+  .nav-scroll::-webkit-scrollbar{height:0;width:0}
+  input::placeholder{color:#9aa6b8}
+  @keyframes ovIn{from{opacity:0}to{opacity:1}}
+  @keyframes panelIn{from{transform:translateX(40px);opacity:.4}to{transform:translateX(0);opacity:1}}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+  a{text-decoration:none}
+</style>
+</helmet>
+<div style="--accent:{{accent}};--hero-bg:{{heroBg}};--hero-fg:{{heroFg}};--hero-fg2:{{heroFg2}};--hero-chip:{{heroChip}};--hero-chipb:{{heroChipB}};--cardpad:{{cardPad}};min-height:100vh;background:#eef1f6">
+
+  <header style="position:sticky;top:0;z-index:30;background:rgba(255,255,255,.86);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid #e1e6ef">
+    <div style="max-width:1180px;margin:0 auto;padding:13px 22px;display:flex;align-items:center;gap:14px">
+      <div style="display:flex;align-items:center;gap:11px;min-width:0">
+        <div style="width:34px;height:34px;border-radius:9px;background:var(--accent,#2456e6);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M12 2.5l7.5 3v5.2c0 4.9-3.2 8.4-7.5 10.3-4.3-1.9-7.5-5.4-7.5-10.3V5.5L12 2.5z" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"/><path d="M8.7 12.2l2.3 2.3 4.3-4.6" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div style="min-width:0">
+          <div style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:17px;letter-spacing:.01em;line-height:1.1">保険手続きナビ</div>
+          <div style="font-size:10.5px;color:#7a869a;font-weight:500;letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">日本中の保険会社の、各種手続き連絡先一覧</div>
+        </div>
+      </div>
+      <div style="flex:1"></div>
+      <div style="display:flex;align-items:center;gap:8px;font-size:11.5px;color:#5d6b80;font-weight:500">
+        <span style="display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border:1px solid #dce3ee;border-radius:999px;background:#fff">
+          <span style="width:7px;height:7px;border-radius:50%;background:#19a06a;box-shadow:0 0 0 3px rgba(25,160,106,.16)"></span>{{ total }}社を掲載
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <section style="background:var(--hero-bg,radial-gradient(1100px 520px at 72% -12%,#15315f 0%,#0b1b34 56%));color:var(--hero-fg,#fff)">
+    <div style="max-width:1180px;margin:0 auto;padding:46px 22px 30px">
+      <div style="display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:700;letter-spacing:.08em;padding:6px 12px;border-radius:999px;background:var(--hero-chip,rgba(255,255,255,.1));border:1px solid var(--hero-chipb,rgba(255,255,255,.18));margin-bottom:18px">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 2.5l7.5 3v5.2c0 4.9-3.2 8.4-7.5 10.3-4.3-1.9-7.5-5.4-7.5-10.3V5.5L12 2.5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        日本中の保険会社 カスタマーセンター総合ガイド
+      </div>
+      <h1 style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:clamp(26px,4.4vw,42px);line-height:1.18;margin:0 0 12px;letter-spacing:.01em;text-wrap:balance">保険手続きナビ</h1>
+      <p style="font-size:clamp(13px,1.5vw,15px);line-height:1.7;color:var(--hero-fg2,rgba(255,255,255,.7));margin:0 0 24px;max-width:620px">生命保険・損害保険・共済・少額短期保険の各社について、手続き別の問い合わせ窓口・電話番号・営業時間・マイページを一括で検索できます。</p>
+
+      <div style="background:#fff;border-radius:15px;padding:7px;box-shadow:0 18px 45px rgba(5,16,38,.28);max-width:680px;display:flex;align-items:center;gap:8px">
+        <div style="padding-left:12px;display:flex;color:#9aa6b8">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.9"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+        </div>
+        <input value="{{ q }}" onInput="{{ onSearch }}" placeholder="会社名で検索（例：東京海上、ソニー、かんぽ…）" style="flex:1;border:none;outline:none;font-size:15px;font-family:'Noto Sans JP',sans-serif;color:#0d1626;padding:11px 4px;background:transparent;min-width:0">
+        <sc-if value="{{ hasQuery }}" hint-placeholder-val="{{ false }}">
+          <button onClick="{{ clearSearch }}" style="border:none;background:#eef1f6;color:#5d6b80;width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:15px;flex-shrink:0">✕</button>
+        </sc-if>
+      </div>
+
+      <div style="margin-top:22px">
+        <div style="font-size:11.5px;font-weight:700;letter-spacing:.06em;color:var(--hero-fg2,rgba(255,255,255,.7));margin-bottom:9px">手続きから探す — 各社の最適な窓口を表示します</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px">
+          <sc-for list="{{ procChips }}" as="chip" hint-placeholder-count="4">
+            <button onClick="{{ chip.onClick }}" style="{{ chip.style }}">{{ chip.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="position:sticky;top:60px;z-index:20;background:rgba(238,241,246,.92);backdrop-filter:blur(8px);border-bottom:1px solid #e1e6ef">
+    <div style="max-width:1180px;margin:0 auto;padding:11px 22px;display:flex;align-items:center;gap:14px">
+      <div class="nav-scroll" style="display:flex;gap:7px;overflow-x:auto;flex:1;min-width:0">
+        <sc-for list="{{ catTabs }}" as="tab" hint-placeholder-count="5">
+          <button onClick="{{ tab.onClick }}" style="{{ tab.style }}">{{ tab.label }}<span style="{{ tab.countStyle }}">{{ tab.count }}</span></button>
+        </sc-for>
+      </div>
+      <button onClick="{{ toggleOpenNow }}" style="{{ openNowStyle }}">
+        <span style="{{ openNowDotStyle }}"></span>営業中のみ
+      </button>
+    </div>
+  </div>
+
+  <main style="max-width:1180px;margin:0 auto;padding:20px 22px 30px">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:14px;flex-wrap:wrap">
+      <div style="font-size:13px;color:#5d6b80;font-weight:500"><strong style="color:#0d1626;font-size:15px;font-weight:700">{{ resultCount }}</strong> 件の保険会社{{ contextLabel }}</div>
+      <div style="font-size:11.5px;color:#8a96a8;display:flex;align-items:center;gap:6px">
+        <span style="width:8px;height:8px;border-radius:50%;background:#19a06a"></span>営業中
+        <span style="width:8px;height:8px;border-radius:50%;background:#c2cbd8;margin-left:6px"></span>時間外（営業時間は目安）
+      </div>
+    </div>
+
+    <sc-if value="{{ hasResults }}" hint-placeholder-val="{{ true }}">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:15px">
+        <sc-for list="{{ list }}" as="c" hint-placeholder-count="9">
+          <div style="background:#fff;border:1px solid #e5eaf2;border-radius:16px;padding:var(--cardpad,18px);display:flex;flex-direction:column;gap:12px;box-shadow:0 1px 2px rgba(13,22,38,.04)">
+            <div style="display:flex;align-items:flex-start;gap:11px">
+              <div style="position:relative;width:42px;height:42px;flex-shrink:0">
+                <div style="position:absolute;inset:0;border-radius:11px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:12px;text-align:center;line-height:1.05;padding:3px;background:{{ c.color }}">{{ c.ini }}</div>
+                {{ c.iconEl }}
+              </div>
+              <div style="flex:1;min-width:0">
+                <div style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:14.5px;line-height:1.3;color:#0d1626">{{ c.name }}</div>
+                <div style="font-size:11px;color:#9aa6b8;margin-top:1px">{{ c.kana }}</div>
+              </div>
+              <div style="{{ c.openStyle }}"><span style="{{ c.openDotStyle }}"></span>{{ c.openLabel }}</div>
+            </div>
+
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+              <span style="{{ c.catStyle }}">{{ c.catLabel }}</span>
+              <span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;color:#6b7688">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 7.5V12l3 1.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>{{ c.hoursText }}
+              </span>
+            </div>
+
+            <div style="background:#f6f8fc;border:1px solid #e9eef6;border-radius:11px;padding:11px 12px">
+              <div style="font-size:10.5px;font-weight:700;letter-spacing:.03em;color:var(--accent,#2456e6);margin-bottom:3px">{{ c.emphLabel }}</div>
+              <sc-if value="{{ c.hasPhone }}" hint-placeholder-val="{{ true }}">
+                <a href="{{ c.emphTel }}" style="display:flex;align-items:center;gap:8px;color:#0d1626;font-weight:700">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;color:var(--accent,#2456e6)"><path d="M6.5 3.5h3l1.4 3.6-2 1.4a11 11 0 005.1 5.1l1.4-2 3.6 1.4v3c0 1-.8 1.8-1.8 1.7C12 21 3 12 3.3 5.3 3.4 4.3 4.2 3.5 5.2 3.5h1.3z" fill="currentColor"/></svg>
+                  <span style="font-size:20px;font-family:'Zen Kaku Gothic New',sans-serif;letter-spacing:.01em;font-variant-numeric:tabular-nums">{{ c.emphNumber }}</span>
+                </a>
+                <div style="font-size:11px;color:#6b7688;margin-top:4px">{{ c.emphAvail }}</div>
+              </sc-if>
+              <sc-if value="{{ c.noPhone }}" hint-placeholder-val="{{ false }}">
+                <a href="{{ c.officialUrl }}" target="_blank" style="display:inline-flex;align-items:center;gap:7px;color:var(--accent,#2456e6);font-weight:700;font-size:13px">
+                  公式サイトで番号を確認
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+                <div style="font-size:11px;color:#94a0b2;margin-top:4px">電話番号は公式サイトでご確認ください</div>
+              </sc-if>
+            </div>
+
+            <div style="display:flex;gap:8px;margin-top:1px">
+              <button onClick="{{ c.onOpen }}" style="flex:1;border:none;background:var(--accent,#2456e6);color:#fff;font-weight:700;font-size:13px;font-family:'Noto Sans JP',sans-serif;padding:10px;border-radius:10px;cursor:pointer">詳しい窓口・手続き</button>
+              <a href="{{ c.mypageUrl }}" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:5px;border:1px solid #dbe2ee;color:#3a4658;font-weight:700;font-size:12.5px;padding:0 13px;border-radius:10px">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.7"/><path d="M5.5 19c.6-3.3 3.2-5 6.5-5s5.9 1.7 6.5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+                マイページ
+              </a>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+    <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">
+      <div style="text-align:center;padding:70px 20px;color:#8a96a8">
+        <div style="font-size:38px;margin-bottom:10px">🔍</div>
+        <div style="font-weight:700;color:#5d6b80;font-size:15px;margin-bottom:6px">該当する保険会社が見つかりませんでした</div>
+        <div style="font-size:13px">会社名のキーワードやカテゴリを変えてお試しください。</div>
+      </div>
+    </sc-if>
+
+    <div style="margin-top:26px;background:#fff;border:1px solid #e5eaf2;border-radius:14px;padding:18px 20px;display:flex;gap:13px;align-items:flex-start">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:1px;color:#c79a2b"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 8v5M12 16h.01" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+      <div style="font-size:12px;line-height:1.7;color:#5d6b80">
+        <strong style="color:#3a4658">掲載情報について：</strong>生命保険・損害保険会社の会社名・相談窓口・電話番号・公式サイトは、<strong>生命保険協会（2026年4月13日時点）</strong>および<strong>日本損害保険協会（2026年4月1日時点）</strong>の会員会社一覧の公開情報に基づいています。共済・少額短期保険・保険代理店（来店型／訪問型）の各社、および全社の<strong>営業時間は代表的な目安</strong>です。窓口や受付時間は商品・手続きにより異なる場合があります。お手続きの前に、必ず各社公式サイト・お手元のご契約書類で最新情報をご確認ください。
+      </div>
+    </div>
+  </main>
+
+  <footer style="border-top:1px solid #e1e6ef;background:#fff">
+    <div style="max-width:1180px;margin:0 auto;padding:22px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap">
+      <div style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:14px;color:#0d1626">保険手続きナビ</div>
+      <div style="font-size:11px;color:#9aa6b8">出典：日本損害保険協会 会員会社一覧 ／ 各社公式サイト ・ 営業時間は目安です</div>
+    </div>
+  </footer>
+
+  <sc-if value="{{ detail }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;z-index:50;animation:ovIn .18s ease">
+      <div onClick="{{ closeDetail }}" style="position:absolute;inset:0;background:rgba(8,15,30,.5)"></div>
+      <div style="position:absolute;top:0;right:0;height:100%;width:min(480px,100%);background:#f6f8fc;box-shadow:-18px 0 50px rgba(5,16,38,.25);display:flex;flex-direction:column;animation:panelIn .26s cubic-bezier(.2,.8,.2,1)">
+        <div style="padding:20px 22px;background:#fff;border-bottom:1px solid #e7ecf4;display:flex;align-items:flex-start;gap:13px">
+          <div style="position:relative;width:46px;height:46px;flex-shrink:0">
+            <div style="position:absolute;inset:0;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:12px;line-height:1.05;text-align:center;padding:3px;background:{{ detail.color }}">{{ detail.ini }}</div>
+            {{ detail.iconEl }}
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:900;font-size:17px;line-height:1.3">{{ detail.name }}</div>
+            <div style="font-size:11.5px;color:#9aa6b8;margin-top:2px">{{ detail.kana }}</div>
+            <div style="margin-top:7px;display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+              <span style="{{ detail.catStyle }}">{{ detail.catLabel }}</span>
+              <span style="{{ detail.openStyle }}"><span style="{{ detail.openDotStyle }}"></span>{{ detail.openLabel }}</span>
+            </div>
+          </div>
+          <button onClick="{{ closeDetail }}" style="border:none;background:#eef1f6;color:#5d6b80;width:32px;height:32px;border-radius:9px;cursor:pointer;font-size:16px;flex-shrink:0">✕</button>
+        </div>
+
+        <div style="flex:1;overflow-y:auto;padding:20px 22px;display:flex;flex-direction:column;gap:18px">
+          <div>
+            <div style="font-size:11px;font-weight:700;letter-spacing:.06em;color:#8a96a8;margin-bottom:9px">問い合わせ窓口</div>
+            <sc-if value="{{ detail.hasPhone }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex;flex-direction:column;gap:9px">
+                <sc-for list="{{ detail.phones }}" as="p" hint-placeholder-count="2">
+                  <a href="{{ p.tel }}" style="display:flex;align-items:center;gap:11px;background:#fff;border:1px solid #e7ecf4;border-radius:12px;padding:12px 14px">
+                    <div style="width:34px;height:34px;border-radius:9px;background:color-mix(in srgb,var(--accent,#2456e6) 12%,#fff);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="color:var(--accent,#2456e6)"><path d="M6.5 3.5h3l1.4 3.6-2 1.4a11 11 0 005.1 5.1l1.4-2 3.6 1.4v3c0 1-.8 1.8-1.8 1.7C12 21 3 12 3.3 5.3 3.4 4.3 4.2 3.5 5.2 3.5h1.3z" fill="currentColor"/></svg>
+                    </div>
+                    <div style="flex:1;min-width:0">
+                      <div style="font-size:11.5px;color:#6b7688;font-weight:500">{{ p.label }}</div>
+                      <div style="font-size:18px;font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;color:#0d1626;font-variant-numeric:tabular-nums">{{ p.number }}</div>
+                    </div>
+                  </a>
+                </sc-for>
+              </div>
+            </sc-if>
+            <sc-if value="{{ detail.noPhone }}" hint-placeholder-val="{{ false }}">
+              <div style="background:#fff;border:1px solid #e7ecf4;border-radius:12px;padding:14px;font-size:12.5px;color:#5d6b80;line-height:1.7">
+                電話番号は商品・手続きにより異なります。お手元の<strong>ご契約のしおり・保険証券</strong>、または公式サイト記載のカスタマーセンターをご確認ください。
+                <a href="{{ detail.officialUrl }}" target="_blank" style="display:inline-flex;align-items:center;gap:6px;margin-top:9px;color:var(--accent,#2456e6);font-weight:700">公式サイトを開く <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+              </div>
+            </sc-if>
+          </div>
+
+          <div>
+            <div style="font-size:11px;font-weight:700;letter-spacing:.06em;color:#8a96a8;margin-bottom:9px">営業時間（目安）</div>
+            <div style="background:#fff;border:1px solid #e7ecf4;border-radius:12px;overflow:hidden">
+              <sc-for list="{{ detail.hoursRows }}" as="r" hint-placeholder-count="3">
+                <div style="display:flex;justify-content:space-between;padding:10px 14px;border-bottom:1px solid #f0f3f8;font-size:13px">
+                  <span style="color:#6b7688;font-weight:500">{{ r.day }}</span>
+                  <span style="color:#0d1626;font-weight:700;font-variant-numeric:tabular-nums">{{ r.time }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div>
+            <div style="font-size:11px;font-weight:700;letter-spacing:.06em;color:#8a96a8;margin-bottom:9px">手続き別のご案内</div>
+            <div style="display:flex;flex-direction:column;gap:9px">
+              <sc-for list="{{ detail.guides }}" as="g" hint-placeholder-count="4">
+                <div style="background:#fff;border:1px solid #e7ecf4;border-radius:12px;padding:13px 14px">
+                  <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">
+                    <span style="width:24px;height:24px;border-radius:7px;background:{{ g.tagColor }};color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0">{{ g.icon }}</span>
+                    <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:13.5px">{{ g.title }}</span>
+                  </div>
+                  <div style="font-size:11.5px;color:var(--accent,#2456e6);font-weight:700;margin:0 0 4px 32px">窓口：{{ g.window }}</div>
+                  <div style="font-size:12px;color:#5d6b80;line-height:1.7;margin-left:32px">{{ g.memo }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:9px;padding-bottom:6px">
+            <a href="{{ detail.mypageUrl }}" target="_blank" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;background:var(--accent,#2456e6);color:#fff;font-weight:700;font-size:13px;padding:12px;border-radius:11px">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.8"/><path d="M5.5 19c.6-3.3 3.2-5 6.5-5s5.9 1.7 6.5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              マイページ
+            </a>
+            <a href="{{ detail.officialUrl }}" target="_blank" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;border:1px solid #dbe2ee;color:#3a4658;font-weight:700;font-size:13px;padding:12px;border-radius:11px">
+              公式サイト
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:880},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#2456e6&quot;,&quot;options&quot;:[&quot;#2456e6&quot;,&quot;#0e7c5a&quot;,&quot;#b3361f&quot;,&quot;#10243f&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;テーマ&quot;},&quot;heroTheme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;dark&quot;,&quot;light&quot;],&quot;default&quot;:&quot;dark&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;テーマ&quot;},&quot;compact&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;テーマ&quot;}}">
+class Component extends DCLogic {
+  state = { q:'', cat:'all', proc:null, openNow:false, detailId:null, tick:0 };
+
+  componentDidMount(){ this._t = setInterval(()=>this.setState(s=>({tick:s.tick+1})), 60000); }
+  componentWillUnmount(){ clearInterval(this._t); }
+
+  jstNow(){
+    try{
+      const parts = new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Tokyo',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+      const map={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}; let wd=1,h=12,m=0;
+      parts.forEach(p=>{ if(p.type==='weekday')wd=map[p.value]; if(p.type==='hour')h=(+p.value)%24; if(p.type==='minute')m=+p.value; });
+      return {wd, min:h*60+m};
+    }catch(e){ const d=new Date(); return {wd:d.getDay(), min:d.getHours()*60+d.getMinutes()}; }
+  }
+
+  HOURS = {
+    wk17:{ text:'平日 9:00–17:00', rows:[['平日','9:00–17:00'],['土曜','休業'],['日・祝','休業']], open:(d,m)=> d>=1&&d<=5&&m>=540&&m<1020 },
+    sat:{ text:'平日 9:00–18:00 ／土 9:00–17:00', rows:[['平日','9:00–18:00'],['土曜','9:00–17:00'],['日・祝','休業']], open:(d,m)=> (d>=1&&d<=5&&m>=540&&m<1080)||(d===6&&m>=540&&m<1020) },
+    long:{ text:'平日 9:00–20:00 ／土日祝 9:00–18:00', rows:[['平日','9:00–20:00'],['土・日','9:00–18:00'],['祝日','9:00–18:00']], open:(d,m)=> (d>=1&&d<=5&&m>=540&&m<1200)||((d===0||d===6)&&m>=540&&m<1080) },
+    shop:{ text:'年中無休 10:00–19:00（店舗）', rows:[['月〜金','10:00–19:00'],['土・日・祝','10:00–19:00']], open:(d,m)=> m>=600&&m<1140 },
+    appt:{ text:'相談受付 9:00–21:00（年中無休）', rows:[['月〜金','9:00–21:00'],['土・日・祝','9:00–21:00']], open:(d,m)=> m>=540&&m<1260 }
+  };
+
+  CAT = {
+    nonlife:{ label:'損害保険', fg:'#b8431e', bg:'#fdeee6' },
+    life:{ label:'生命保険', fg:'#2447b8', bg:'#eaf0ff' },
+    kyosai:{ label:'共済', fg:'#0f7a52', bg:'#e7f6ee' },
+    mini:{ label:'少額短期', fg:'#7a3aa8', bg:'#f3eafb' },
+    agency:{ label:'相談・代理店', fg:'#0d7a8a', bg:'#e2f4f6' }
+  };
+
+  PROCS = ['解約','給付金・保険金請求','住所・氏名変更','受取人・払込変更','口座振替→クレカ','クレカ変更'];
+  PROC_ICON = {'解約':'✕','給付金・保険金請求':'¥','住所・氏名変更':'⌂','受取人・払込変更':'⇄','口座振替→クレカ':'⇄','クレカ変更':'↻'};
+  PROC_TCOLOR = {'解約':'#c0563a','給付金・保険金請求':'#1f8a5b','住所・氏名変更':'#2456e6','受取人・払込変更':'#8a5cc0','口座振替→クレカ':'#7a52b8','クレカ変更':'#6d4aa8'};
+
+  MEMO = {
+    life:{
+      '解約':'解約はお電話でのお申し出後、所定の書類をご返送いただきます。解約返戻金の有無・金額はご契約により異なります。',
+      '給付金・保険金請求':'入院・手術・通院・死亡など、給付事由により必要書類が異なります。まずはお電話・マイページでご連絡ください。',
+      '住所・氏名変更':'ご住所の変更はマイページから24時間お手続き可能。お名前の変更は本人確認書類が必要です。',
+      '受取人・払込変更':'受取人の変更は所定の請求書、保険料の払込方法・口座変更はマイページが便利です。',
+      '口座振替→クレカ':'お支払い方法を口座振替からクレジットカード払いへ変更するお手続きです。マイページまたはお電話で承ります（商品・カードにより取扱いが異なります）。',
+      'クレカ変更':'ご登録中のクレジットカードの変更（カード番号・有効期限の更新を含む）のお手続きです。マイページからのお手続きが便利です。'
+    },
+    nonlife:{
+      '解約':'中途解約のお手続きです。自動車保険は等級の引継ぎ・解約返戻金にご注意ください。',
+      '給付金・保険金請求':'事故のご連絡・保険金のご請求はお早めに。多くの会社で事故受付は24時間365日対応です。',
+      '住所・氏名変更':'ご住所・お車・補償内容の変更はマイページまたはお電話で承ります。',
+      '受取人・払込変更':'保険料の払込方法・口座の変更、契約条件の変更を承ります。',
+      '口座振替→クレカ':'保険料のお支払いを口座振替からクレジットカード払いへ変更するお手続きです。マイページまたはお電話で承ります（商品・カードにより取扱いが異なります）。',
+      'クレカ変更':'ご登録中のクレジットカードの変更（カード番号・有効期限の更新を含む）のお手続きです。マイページからのお手続きが便利です。'
+    },
+    kyosai:{
+      '解約':'共済契約の解約（脱退）のお手続きです。割戻金・解約手当金は契約により異なります。',
+      '給付金・保険金請求':'入院・手術・災害・死亡などの共済金請求。事由により必要書類が異なります。',
+      '住所・氏名変更':'ご住所・お名前の変更はお電話または窓口で承ります。',
+      '受取人・払込変更':'加入内容の変更・掛金の払込方法変更を承ります。',
+      '口座振替→クレカ':'掛金のお支払いを口座振替からクレジットカード払いへ変更するお手続きです。お電話または窓口で承ります（団体・商品により取扱いが異なります）。',
+      'クレカ変更':'ご登録中のクレジットカードの変更（カード番号・有効期限の更新を含む）のお手続きです。お電話または窓口で承ります。'
+    },
+    mini:{
+      '解約':'解約はお電話または書面でのお手続きです。少額短期保険は掛捨て型が中心で返戻金がない場合があります。',
+      '給付金・保険金請求':'保険金のご請求は事由発生後お早めに。必要書類は商品により異なります。',
+      '住所・氏名変更':'ご住所・お名前の変更はマイページまたはお電話で承ります。',
+      '受取人・払込変更':'受取人の変更・保険料の支払方法変更を承ります。',
+      '口座振替→クレカ':'保険料のお支払いを口座振替からクレジットカード払いへ変更するお手続きです。マイページまたはお電話で承ります（商品・カードにより取扱いが異なります）。',
+      'クレカ変更':'ご登録中のクレジットカードの変更（カード番号・有効期限の更新を含む）のお手続きです。マイページからのお手続きが便利です。'
+    },
+    agency:{
+      '解約':'代理店はご契約のご相談・お取次ぎ窓口です。解約のお手続き・解約返戻金のご確認は、ご契約の引受保険会社で行います。担当者・店舗がご案内します。',
+      '給付金・保険金請求':'まずは担当者・店舗へご相談ください。給付金・保険金の最終的なご請求手続きは、引受保険会社が承ります。',
+      '住所・氏名変更':'ご住所・お名前の変更は、担当代理店または引受保険会社へご連絡ください。',
+      '受取人・払込変更':'受取人・払込方法の変更は、担当代理店経由または引受保険会社でお手続きいただけます。',
+      '口座振替→クレカ':'お支払い方法の変更可否は引受保険会社により異なります。担当代理店または各保険会社へご確認ください。',
+      'クレカ変更':'ご登録クレジットカードの変更は引受保険会社でのお手続きとなります。担当代理店がご案内します。'
+    }
+  };
+
+  RAW = [
+    ['東京海上日動火災保険','とうきょうかいじょうにちどう','nonlife','#d70c19','東海\n日動','sat','tokiomarine-nichido.co.jp',[['お客様相談センター','0120-071-281']]],
+    ['損害保険ジャパン','そんがいほけんじゃぱん','nonlife','#e60000','損保\nJ','sat','sompo-japan.co.jp',[['お客さま総合窓口','0120-888-089'],['保険金支払ご相談窓口','0120-668-292']]],
+    ['三井住友海上火災保険','みついすみともかいじょう','nonlife','#0098d8','三井\n住友','sat','ms-ins.com',[['お客さまデスク','0120-632-277'],['保険金支払相談デスク','0120-288-861']]],
+    ['あいおいニッセイ同和損保','あいおいにっせいどうわ','nonlife','#e50012','あい\nおい','sat','aioinissaydowa.co.jp',[['カスタマーセンター','0120-101-101'],['苦情等の窓口','0120-721-101']]],
+    ['共栄火災海上保険','きょうえいかさいかいじょう','nonlife','#0a4a9e','共栄\n火災','wk17','kyoeikasai.co.jp',[['カスタマーセンター','0120-719-112']]],
+    ['日新火災海上保険','にっしんかさいかいじょう','nonlife','#e2001a','日新\n火災','wk17','nisshinfire.co.jp',[['お客さま相談室','0120-17-2424']]],
+    ['大同火災海上保険','だいどうかさいかいじょう','nonlife','#00a0aa','大同\n火災','wk17','daidokasai.co.jp',[['お客さま相談センター','0120-671-071']]],
+    ['セコム損害保険','せこむそんがいほけん','nonlife','#009a44','SECOM','sat','secom-sonpo.co.jp',[['お客様相談室','0120-333-962']]],
+    ['AIG損害保険','えーあいじーそんがいほけん','nonlife','#0a1a72','AIG','sat','aig.co.jp/sonpo',[['商品・ご契約のお問い合わせ','0120-016-693']]],
+    ['明治安田損害保険','めいじやすだそんがいほけん','nonlife','#1f3a93','明治\n安田','wk17','meijiyasuda-sonpo.co.jp',[['お客さま相談室','0120-255-400']]],
+    ['ソニー損害保険','そにーそんがいほけん','nonlife','#1a1a1a','SONY','long','sonysonpo.co.jp',[['お客様相談室','0120-101-656']]],
+    ['アクサ損害保険（アクサダイレクト）','あくさだいれくと','nonlife','#00008f','AXA','long','axa-direct.co.jp',[['お客様相談室','0120-449-669']]],
+    ['三井ダイレクト損害保険','みついだいれくと','nonlife','#003f98','三井\nｄ','long','mitsui-direct.co.jp',[['お客さま相談デスク','0120-312-770']]],
+    ['SBI損害保険','えすびーあいそんがいほけん','nonlife','#00539b','SBI','long','sbisonpo.co.jp',[['お客様相談室','0800-8888-836']]],
+    ['au損害保険','えーゆーそんがいほけん','nonlife','#eb5505','au','long','au-sonpo.co.jp',[['カスタマーセンター','0800-700-0600']]],
+    ['楽天損害保険','らくてんそんがいほけん','nonlife','#bf0000','楽天','long','rakuten-sonpo.co.jp',[['お客様相談センター','0120-115-603']]],
+    ['東京海上ダイレクト（イーデザイン損保）','いーでざいんそんぽ','nonlife','#e60012','E\nDESIGN','long','e-design.net',[['お客さま相談ダイヤル','0120-063-040']]],
+    ['SOMPOダイレクト損害保険','そんぽだいれくと','nonlife','#e60000','SOMPO\nｄ','long','sompo-direct.co.jp',[['お客さま相談室','0120-281-389']]],
+    ['NTTドコモ損害保険','どこもそんがいほけん','nonlife','#cc0033','docomo','long','docomo-sompo.com',[]],
+    ['アニコム損害保険','あにこむそんがいほけん','nonlife','#ec6c00','ani\ncom','sat','anicom-sompo.co.jp',[['お客様相談センター','0800-111-1091']]],
+    ['第一アイペット損害保険','だいいちあいぺっと','nonlife','#5b9bd5','iPet','sat','ipet-ins.com',[['お客さま総合ダイヤル','0800-919-1525']]],
+    ['ペット&ファミリー損害保険','ぺっとあんどふぁみりー','nonlife','#5fa83a','P&F','sat','petfamilyins.co.jp',[['お問い合わせ窓口','0120-584-412']]],
+    ['ジェイアイ傷害火災保険','じぇいあいしょうがいかさい','nonlife','#003da5','J/I','sat','jihoken.co.jp',[['お客様の声相談センター','0120-532-200']]],
+    ['キャピタル損害保険','きゃぴたるそんがいほけん','nonlife','#1f6f54','Cap\nital','wk17','capital-sonpo.co.jp',[['お客様相談室','0120-777-970']]],
+    ['エイチ・エス損害保険','えいちえすそんがいほけん','nonlife','#d6336c','H.S.','wk17','hs-sonpo.co.jp',[['お客様相談室','050-5433-3196']]],
+    ['全管協れいわ損害保険','ぜんかんきょうれいわ','nonlife','#6f42c1','全管\n協','wk17','zkreiwa-sonpo.co.jp',[['お客さま相談窓口','0120-018-216']]],
+    ['さくら損害保険','さくらそんがいほけん','nonlife','#e83e8c','さくら','wk17','sakura-ins.co.jp',[['お客さま相談','03-6388-0609']]],
+    ['ヤマップネイチャランス損害保険','やまっぷねいちゃらんす','nonlife','#2f9e44','YAMAP','sat','yamap-naturance.co.jp',[['お客様相談室','0800-100-0684']]],
+    ['レスキュー損害保険','れすきゅーそんがいほけん','nonlife','#d9480f','RES\nCUE','wk17','rescue-sonpo.jp',[['代表','03-6722-0293']]],
+
+    ['日本生命保険','にっぽんせいめい','life','#c8102e','日本\n生命','sat','nissay.co.jp',[['ニッセイコールセンター','0120-201-021']]],
+    ['第一生命保険','だいいちせいめい','life','#d4002a','第一\n生命','sat','dai-ichi-life.co.jp',[['第一生命コンタクトセンター','0120-157-157']]],
+    ['明治安田生命保険','めいじやすだせいめい','life','#1f3a93','明治\n安田','sat','meijiyasuda.co.jp',[['コミュニケーションセンター','0120-662-332']]],
+    ['住友生命保険','すみともせいめい','life','#007a3d','住友\n生命','sat','sumitomolife.co.jp',[['スミセイコールセンター','0120-307-506']]],
+    ['かんぽ生命保険','かんぽせいめい','life','#008a35','かんぽ','sat','jp-life.japanpost.jp',[['かんぽコールセンター','0120-552-950']]],
+    ['太陽生命保険','たいようせいめい','life','#f08300','太陽\n生命','sat','taiyo-seimei.co.jp',[['お客様サービスセンター','0120-97-2111']]],
+    ['大同生命保険','だいどうせいめい','life','#e60012','大同\n生命','sat','daido-life.co.jp',[['コールセンター','0120-789-501']]],
+    ['富国生命保険','ふこくせいめい','life','#00529b','富国\n生命','sat','fukoku-life.co.jp',[['お客さまセンター','0120-259-817']]],
+    ['朝日生命保険','あさひせいめい','life','#e60012','朝日\n生命','sat','asahi-life.co.jp',[['お客様サービスセンター','0120-714-532']]],
+    ['大樹生命保険','たいじゅせいめい','life','#1a5276','大樹\n生命','sat','taiju-life.co.jp',[['お客さまサービスセンター','0120-318-766']]],
+    ['アフラック生命保険','あふらっくせいめい','life','#00529b','AFLAC','sat','aflac.co.jp',[['アフラックスクエア コールセンター','0120-5555-95']]],
+    ['メットライフ生命保険','めっとらいふせいめい','life','#0090c5','Met\nLife','sat','metlife.co.jp',[['カスタマーサービスセンター','0120-881-796'],['お客さま相談室','0120-880-533']]],
+    ['ソニー生命保険','そにーせいめい','life','#1a1a1a','SONY','sat','sonylife.co.jp',[['カスタマーセンター','0120-158-821']]],
+    ['プルデンシャル生命保険','ぷるでんしゃるせいめい','life','#00467f','Pru','sat','prudential.co.jp',[['カスタマーサービスセンター','0120-810-740']]],
+    ['ジブラルタ生命保険','じぶらるたせいめい','life','#b8101f','Gib','sat','gib-life.co.jp',[['コールセンター','0120-37-2269']]],
+    ['アクサ生命保険','あくさせいめい','life','#00008f','AXA','sat','axa.co.jp',[['お客様相談室','0120-030-775']]],
+    ['東京海上日動あんしん生命','あんしんせいめい','life','#00508f','あん\nしん','sat','tmn-anshin.co.jp',[['カスタマーセンター','0120-016-234']]],
+    ['三井住友海上あいおい生命','えむえすあいおいせいめい','life','#0098d8','MSA','sat','msa-life.co.jp',[['お客さまサービスセンター','0120-324-386']]],
+    ['SOMPOひまわり生命保険','ひまわりせいめい','life','#ec6c00','ひま\nわり','sat','himawari-life.co.jp',[['お客さま相談グループ','0120-273-211']]],
+    ['オリックス生命保険','おりっくすせいめい','life','#003d7a','ORIX','sat','orixlife.co.jp',[['カスタマーサービスセンター','0120-506-094'],['お客さま相談窓口','0120-227-780']]],
+    ['ライフネット生命保険','らいふねっとせいめい','life','#f08300','Life\nNet','sat','lifenet-seimei.co.jp',[['コンタクトセンター','0120-205-566']]],
+    ['はなさく生命保険','はなさくせいめい','life','#e84393','はな\nさく','sat','life8739.co.jp',[['お客様コンタクトセンター','0120-8739-17']]],
+    ['第一ネオ生命保険','だいいちねおせいめい','life','#00a884','第一\nNeo','sat','neofirst.co.jp',[['コンタクトセンター','0120-312-201']]],
+    ['メディケア生命保険','めでぃけあせいめい','life','#0984e3','Medi\ncare','sat','medicarelife.com',[['コールセンター','0120-315-056']]],
+    ['チューリッヒ生命','ちゅーりっひせいめい','life','#0033a0','Zurich','sat','zurichlife.co.jp',[['カスタマーケアセンター','0120-236-523']]],
+    ['FWD生命保険','えふだぶりゅーでぃーせいめい','life','#e67817','FWD','sat','fwdlife.co.jp',[['総合サービスセンター','0120-211-901']]],
+    ['マニュライフ生命保険','まにゅらいふせいめい','life','#00853f','Manu\nlife','sat','manulife.co.jp',[['お客様コールセンター','0120-063-730'],['変額年金カスタマーセンター','0120-925-008']]],
+    ['SBI生命保険','えすびーあいせいめい','life','#00539b','SBI','sat','sbilife.co.jp',[['お客様コンタクトセンター','0120-272-811']]],
+    ['楽天生命保険','らくてんせいめい','life','#bf0000','楽天\n生命','sat','rakuten-insurance.co.jp',[['楽天保険の総合窓口','0120-849-150']]],
+    ['なないろ生命保険','なないろせいめい','life','#c0398e','なな\nいろ','sat','nanairolife.co.jp',[['お客様サービスC（一般）','0120-08-7716'],['お客様サービスC（シニア）','0120-38-7716']]],
+    ['第一フロンティア生命保険','だいいちふろんてぃあ','life','#d4002a','第一\nFr','sat','d-frontier-life.co.jp',[['お客さまサービスセンター','0120-876-126']]],
+    ['T&Dフィナンシャル生命保険','てぃーあんどでぃー','life','#1a5276','T&D','sat','tdf-life.co.jp',[['お客様サービスセンター','0120-301-396']]],
+    ['エヌエヌ生命保険','えぬえぬせいめい','life','#ee7203','NN','sat','nnlife.co.jp',[['サービスセンター','0120-521-513']]],
+    ['カーディフ生命保険','かーでぃふせいめい','life','#00915a','Car\ndif','sat','life.cardif.co.jp',[['カスタマーサービスセンター','0120-820-275']]],
+    ['クレディ・アグリコル生命保険','くれでぃあぐりこるせいめい','life','#006a4e','CA','sat','ca-life.jp',[['カスタマーサービスセンター','0120-60-1221']]],
+    ['ニッセイ・ウェルス生命保険','にっせいうぇるすせいめい','life','#1a3c8c','NW','sat','nw-life.co.jp',[['カスタマーサービスセンター','0120-817-024']]],
+    ['フコクしんらい生命保険','ふこくしんらいせいめい','life','#0a6cb0','しん\nらい','sat','fukokushinrai.co.jp',[['お客さまサービス室','0120-700-651']]],
+    ['PGF生命保険','ぴーじーえふせいめい','life','#00467f','PGF','sat','pgf-life.co.jp',[['コールセンター','0120-56-2269']]],
+    ['三井住友海上プライマリー生命','みついすみともぷらいまりー','life','#0098d8','MSP','sat','ms-primary.com',[['お客さまサービスセンター','0120-125-104']]],
+    ['みどり生命保険','みどりせいめい','life','#43a047','みどり','sat','midori-life.com',[['お客さまサービスセンター','0120-566-322']]],
+    ['明治安田トラスト生命保険','めいじやすだとらすとせいめい','life','#1f3a93','明安\nT','sat','meijiyasuda-trustlife.co.jp',[['カスタマーサービスセンター','0120-503-928']]],
+
+    ['JA共済（全国共済農業協同組合連合会）','じぇいえーきょうさい','kyosai','#007c36','JA','wk17','ja-kyosai.or.jp',[]],
+    ['こくみん共済 coop〈全労済〉','こくみんきょうさいぜんろうさい','kyosai','#f29600','こく\nみん','sat','zenrosai.coop',[]],
+    ['都道府県民共済〈全国生協連〉','けんみんきょうさい','kyosai','#009a44','県民\n共済','wk17','kyosai-cc.or.jp',[]],
+    ['CO・OP共済〈コープ共済連〉','こーぷきょうさい','kyosai','#e95513','CO\nOP','sat','coopkyosai.coop',[]],
+    ['教職員共済','きょうしょくいんきょうさい','kyosai','#2d6a9f','教職\n員','wk17','kyousyokuin.or.jp',[]],
+
+    ['SBIいきいき少額短期保険','えすびーあいいきいき','mini','#00539b','いき\nいき','long','?',[]],
+    ['アイアル少額短期保険','あいあるしょうがくたんき','mini','#7a3aa8','aial','wk17','?',[]],
+    ['justInCase','じゃすといんけーす','mini','#ff5a5f','jIC','long','justincase.jp',[]],
+    ['ぜんち共済〈少額短期保険〉','ぜんちきょうさい','mini','#16a085','ぜん\nち','wk17','zenchikyosai.com',[]],
+    ['エクセルエイド少額短期保険','えくせるえいど','mini','#8e44ad','EXL','wk17','?',[]],
+
+    ['ほけんの窓口（来店型）','ほけんのまどぐち','agency','#e8380d','窓口','shop','hokennomadoguchi.com',[]],
+    ['保険見直し本舗（来店型）','ほけんみなおしほんぽ','agency','#0a8a4a','見直\n本舗','shop','hokenhonpo.com',[]],
+    ['保険クリニック（来店型）','ほけんくりにっく','agency','#0a6cb0','保険\nｸﾘﾆｯｸ','shop','hoken-clinic.com',[]],
+    ['保険市場（来店・オンライン）','ほけんいちば','agency','#c8102e','保険\n市場','shop','?',[]],
+    ['イオンのほけん相談（来店型）','いおんのほけんそうだん','agency','#e6007e','イオン','shop','?',[]],
+    ['マネードクター（訪問型）','まねーどくたー','agency','#1f3a93','Money\nDr','appt','?',[]],
+    ['保険マンモス（訪問型）','ほけんまんもす','agency','#7a4a1f','マン\nモス','appt','?',[]],
+    ['みんなの生命保険アドバイザー（訪問型）','みんなのせいめいほけんあどばいざー','agency','#0d7a8a','みんな\nの保険','appt','?',[]]
+  ];
+
+  all(){
+    if(this._all) return this._all;
+    this._all = this.RAW.map((r,i)=>{
+      const [name,kana,cat,color,ini,hk,web,phones] = r;
+      const officialUrl = web==='?' ? ('https://www.google.com/search?q='+encodeURIComponent(name+' 公式サイト')) : ('https://'+web);
+      const mypageUrl = web==='?' ? officialUrl : ('https://www.google.com/search?q='+encodeURIComponent(name+' マイページ ログイン'));
+      const host = web==='?' ? '' : web.split('/')[0];
+      const iconUrl = host ? ('https://www.google.com/s2/favicons?sz=64&domain='+host) : '';
+      return { id:i, name, kana, cat, color, ini, hk, web, officialUrl, mypageUrl, host, hasIcon:!!host,
+        phones: phones.map(p=>({label:p[0], number:p[1]})),
+        verified: cat==='nonlife' && phones.length>0 };
+    });
+    return this._all;
+  }
+
+  ICON_SKIP = { 'justincase.jp':1 };
+
+  makeIcon(c, radius, pad){
+    if(!c.host || this.ICON_SKIP[c.host]) return null;
+    const cands = [
+      'https://logo.clearbit.com/'+c.host,
+      'https://www.google.com/s2/favicons?sz=128&domain='+c.host,
+      'https://icons.duckduckgo.com/ip3/'+c.host+'.ico'
+    ];
+    const onErr = (e)=>{
+      const el=e.target, i=(+(el.dataset.i||0))+1;
+      if(i<cands.length){ el.dataset.i=String(i); el.src=cands[i]; }
+      else { el.style.display='none'; }
+    };
+    return React.createElement('img',{ key:c.host, src:cands[0], 'data-i':'0', alt:'', loading:'lazy', onError:onErr,
+      style:{ position:'absolute', inset:0, width:'100%', height:'100%', borderRadius:radius, background:'#fff', objectFit:'contain', padding:pad, border:'1px solid #e8edf4', boxShadow:'0 1px 2px rgba(13,22,38,.06)' } });
+  }
+
+  pickPhone(c, proc){
+    if(!c.phones.length) return null;
+    if(proc==='給付金・保険金請求'){
+      const claim = c.phones.find(p=>/保険金|支払|請求|給付/.test(p.label));
+      if(claim) return claim;
+    }
+    return c.phones[0];
+  }
+
+  renderVals(){
+    const accent = this.props.accent || '#2456e6';
+    const theme = (this.props.heroTheme==='light') ? {
+      heroBg:'linear-gradient(180deg,#eef3fb 0%,#e4ebf6 100%)', heroFg:'#0c1a33', heroFg2:'#52617a', heroChip:'#ffffff', heroChipB:'#d4ddec'
+    } : {
+      heroBg:'radial-gradient(1100px 520px at 72% -12%,#16335f 0%,#0b1b34 56%)', heroFg:'#ffffff', heroFg2:'rgba(255,255,255,.72)', heroChip:'rgba(255,255,255,.10)', heroChipB:'rgba(255,255,255,.20)'
+    };
+    const cardPad = this.props.compact ? '14px' : '18px';
+
+    const now = this.jstNow();
+    const isOpen = (c)=> this.HOURS[c.hk].open(now.wd, now.min);
+    const all = this.all();
+    const q = this.state.q.trim().toLowerCase();
+    const proc = this.state.proc;
+
+    // category counts (respect search but not openNow)
+    const searched = all.filter(c=> !q || c.name.toLowerCase().includes(q) || c.kana.includes(q) || c.kana.includes(this.state.q.trim()));
+    const counts = { all: searched.length, nonlife:0, life:0, kyosai:0, mini:0, agency:0 };
+    searched.forEach(c=> counts[c.cat]++);
+
+    let list = searched.filter(c=> this.state.cat==='all' || c.cat===this.state.cat);
+    if(this.state.openNow) list = list.filter(c=> isOpen(c));
+    // sort: open first, then keep RAW order
+    list = list.slice().sort((a,b)=> (isOpen(b)?1:0)-(isOpen(a)?1:0) || a.id-b.id);
+
+    const chipBase='font-family:inherit;font-size:12.5px;font-weight:700;padding:8px 14px;border-radius:999px;cursor:pointer;transition:.12s;border:1px solid ';
+    const procChips = this.PROCS.map(p=>({
+      label:p, onClick:()=> this.setState(s=>({proc: s.proc===p?null:p})),
+      style: chipBase + (proc===p
+        ? 'transparent;background:#fff;color:#0d1626;box-shadow:0 4px 14px rgba(0,0,0,.18)'
+        : 'var(--hero-chipb,rgba(255,255,255,.2));background:var(--hero-chip,rgba(255,255,255,.1));color:var(--hero-fg,#fff)')
+    }));
+
+    const tabBase='font-family:inherit;font-size:12.5px;font-weight:700;padding:7px 7px 7px 13px;border-radius:999px;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:7px;transition:.12s;border:1px solid ';
+    const mkTab=(key,label)=>{
+      const active=this.state.cat===key;
+      return { label, count:counts[key], onClick:()=>this.setState({cat:key}),
+        style: tabBase + (active?'transparent;background:#0d1626;color:#fff':'#dce3ee;background:#fff;color:#4a5568'),
+        countStyle:'font-size:11px;font-weight:700;padding:1px 7px;border-radius:999px;'+(active?'background:rgba(255,255,255,.22);color:#fff':'background:#eef1f6;color:#7a869a') };
+    };
+    const catTabs=[ mkTab('all','すべて'), mkTab('nonlife','損害保険'), mkTab('life','生命保険'), mkTab('kyosai','共済'), mkTab('mini','少額短期'), mkTab('agency','相談・代理店') ];
+
+    const openNowActive=this.state.openNow;
+    const openNowStyle='font-family:inherit;font-size:12px;font-weight:700;padding:7px 13px;border-radius:999px;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:7px;flex-shrink:0;border:1px solid '+(openNowActive?'transparent;background:#0a7f57;color:#fff':'#dce3ee;background:#fff;color:#4a5568');
+    const openNowDotStyle='width:8px;height:8px;border-radius:50%;background:'+(openNowActive?'#fff':'#19a06a');
+
+    const decorate=(c)=>{
+      const op=isOpen(c);
+      const cat=this.CAT[c.cat];
+      const emph=this.pickPhone(c,proc);
+      let emphLabel, emphAvail;
+      if(proc){
+        if(emph){ emphLabel='「'+proc+'」の窓口：'+emph.label; }
+        else { emphLabel='「'+proc+'」のお手続き'; }
+        emphAvail = (c.cat==='nonlife'&&proc==='給付金・保険金請求') ? '事故受付は24時間365日対応の場合があります' : (op?'ただいま受付中です':'営業時間外です（'+this.HOURS[c.hk].text+'）');
+      } else {
+        emphLabel = emph ? emph.label : '問い合わせ窓口';
+        emphAvail = op?'ただいま受付中です':'営業時間外（'+this.HOURS[c.hk].text+'）';
+      }
+      return {
+        id:c.id, name:c.name, kana:c.kana, color:c.color, ini:c.ini,
+        iconEl: this.makeIcon(c,'11px','6px'),
+        catLabel:cat.label,
+        catStyle:'font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:6px;color:'+cat.fg+';background:'+cat.bg,
+        hoursText:this.HOURS[c.hk].text,
+        openLabel:op?'営業中':'時間外',
+        openStyle:'flex-shrink:0;display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:4px 9px;border-radius:999px;'+(op?'color:#0a7f57;background:#e7f7f0':'color:#8593a6;background:#eef1f6'),
+        openDotStyle:'width:7px;height:7px;border-radius:50%;background:'+(op?'#19a06a':'#c2cbd8')+(op?';animation:pulse 2s infinite':''),
+        hasPhone:!!emph, noPhone:!emph,
+        emphLabel, emphAvail,
+        emphNumber: emph?emph.number:'', emphTel: emph?('tel:'+emph.number.replace(/[^0-9]/g,'')):'#',
+        officialUrl:c.officialUrl, mypageUrl:c.mypageUrl,
+        onOpen:()=>this.setState({detailId:c.id})
+      };
+    };
+
+    let detail=null;
+    if(this.state.detailId!=null){
+      const c=all.find(x=>x.id===this.state.detailId);
+      if(c){
+        const op=isOpen(c); const cat=this.CAT[c.cat];
+        detail={
+          color:c.color, ini:c.ini, name:c.name, kana:c.kana, iconEl:this.makeIcon(c,'12px','7px'),
+          catLabel:cat.label, catStyle:'font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:6px;color:'+cat.fg+';background:'+cat.bg,
+          openLabel:op?'営業中':'営業時間外', openStyle:'display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;'+(op?'color:#0a7f57;background:#e7f7f0':'color:#8593a6;background:#eef1f6'),
+          openDotStyle:'width:7px;height:7px;border-radius:50%;background:'+(op?'#19a06a':'#c2cbd8'),
+          hasPhone:c.phones.length>0, noPhone:c.phones.length===0,
+          phones:c.phones.map(p=>({label:p.label,number:p.number,tel:'tel:'+p.number.replace(/[^0-9]/g,'')})),
+          hoursRows:this.HOURS[c.hk].rows.map(r=>({day:r[0],time:r[1]})),
+          guides:this.PROCS.map(p=>{
+            const ph=this.pickPhone(c,p);
+            return { title:p, icon:this.PROC_ICON[p], tagColor:this.PROC_TCOLOR[p],
+              window: ph?ph.label:'公式サイト記載の窓口', memo:this.MEMO[c.cat][p] };
+          }),
+          officialUrl:c.officialUrl, mypageUrl:c.mypageUrl
+        };
+      }
+    }
+
+    const contextLabel = this.state.proc ? '（「'+this.state.proc+'」の窓口を表示中）' : '';
+
+    return {
+      accent, heroBg:theme.heroBg, heroFg:theme.heroFg, heroFg2:theme.heroFg2, heroChip:theme.heroChip, heroChipB:theme.heroChipB, cardPad,
+      total:all.length,
+      q:this.state.q, hasQuery:this.state.q.length>0,
+      onSearch:(e)=>this.setState({q:e.target.value}),
+      clearSearch:()=>this.setState({q:''}),
+      procChips, catTabs, openNowStyle, openNowDotStyle, toggleOpenNow:()=>this.setState(s=>({openNow:!s.openNow})),
+      list:list.map(decorate), resultCount:list.length, hasResults:list.length>0, noResults:list.length===0,
+      contextLabel,
+      detail, closeDetail:()=>this.setState({detailId:null})
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,1907 @@
+{
+  "meta": {
+    "title": "保険手続きナビ",
+    "description": "日本中の保険会社の、各種手続き連絡先一覧",
+    "totalCompanies": 88,
+    "countsByCategory": {
+      "nonlife": 29,
+      "life": 41,
+      "kyosai": 5,
+      "mini": 5,
+      "agency": 8
+    },
+    "sources": [
+      {
+        "name": "生命保険協会 会員会社一覧",
+        "asOf": "2026-04-13",
+        "appliesTo": "life の会社名・相談窓口・電話番号・公式サイト"
+      },
+      {
+        "name": "日本損害保険協会 会員会社一覧",
+        "asOf": "2026-04-01",
+        "appliesTo": "nonlife の会社名・相談窓口・電話番号・公式サイト"
+      }
+    ],
+    "notes": [
+      "kyosai/mini/agency は公式サイトリンク中心で電話番号は未掲載（phones=[]）。",
+      "全社の営業時間（hoursKey/hoursPresets）は代表的な目安。実データで差し替え可能。",
+      "verified=true の会社のみ協会公開データ由来の実電話番号。",
+      "公式サイトリンクは確認できた各社の公式URLへ設定。マイページ/手続き案内は公式サイトまたは公式手続きページへ誘導。",
+      "iconSkipHosts のドメインは自動アイコンが別社ロゴを返すため initials を使用。"
+    ],
+    "iconSkipHosts": [
+      "justincase.jp"
+    ]
+  },
+  "categories": [
+    {
+      "key": "all",
+      "label": "すべて"
+    },
+    {
+      "key": "nonlife",
+      "label": "損害保険",
+      "fg": "#b8431e",
+      "bg": "#fdeee6"
+    },
+    {
+      "key": "life",
+      "label": "生命保険",
+      "fg": "#2447b8",
+      "bg": "#eaf0ff"
+    },
+    {
+      "key": "kyosai",
+      "label": "共済",
+      "fg": "#0f7a52",
+      "bg": "#e7f6ee"
+    },
+    {
+      "key": "mini",
+      "label": "少額短期",
+      "fg": "#7a3aa8",
+      "bg": "#f3eafb"
+    },
+    {
+      "key": "agency",
+      "label": "相談・代理店",
+      "fg": "#0d7a8a",
+      "bg": "#e2f4f6"
+    }
+  ],
+  "procedures": [
+    {
+      "key": "解約",
+      "icon": "✕",
+      "color": "#c0563a"
+    },
+    {
+      "key": "給付金・保険金請求",
+      "icon": "¥",
+      "color": "#1f8a5b"
+    },
+    {
+      "key": "住所・氏名変更",
+      "icon": "⌂",
+      "color": "#2456e6"
+    },
+    {
+      "key": "受取人・払込変更",
+      "icon": "⇄",
+      "color": "#8a5cc0"
+    },
+    {
+      "key": "口座振替→クレカ",
+      "icon": "⇄",
+      "color": "#7a52b8"
+    },
+    {
+      "key": "クレカ変更",
+      "icon": "↻",
+      "color": "#6d4aa8"
+    }
+  ],
+  "hoursPresets": {
+    "wk17": {
+      "text": "平日 9:00–17:00",
+      "rows": [
+        {
+          "day": "平日",
+          "time": "9:00–17:00"
+        },
+        {
+          "day": "土曜",
+          "time": "休業"
+        },
+        {
+          "day": "日・祝",
+          "time": "休業"
+        }
+      ],
+      "open": {
+        "weekday": [
+          540,
+          1020
+        ],
+        "saturday": null,
+        "sunday": null,
+        "holiday": null
+      }
+    },
+    "sat": {
+      "text": "平日 9:00–18:00 ／土 9:00–17:00",
+      "rows": [
+        {
+          "day": "平日",
+          "time": "9:00–18:00"
+        },
+        {
+          "day": "土曜",
+          "time": "9:00–17:00"
+        },
+        {
+          "day": "日・祝",
+          "time": "休業"
+        }
+      ],
+      "open": {
+        "weekday": [
+          540,
+          1080
+        ],
+        "saturday": [
+          540,
+          1020
+        ],
+        "sunday": null,
+        "holiday": null
+      }
+    },
+    "long": {
+      "text": "平日 9:00–20:00 ／土日祝 9:00–18:00",
+      "rows": [
+        {
+          "day": "平日",
+          "time": "9:00–20:00"
+        },
+        {
+          "day": "土・日",
+          "time": "9:00–18:00"
+        },
+        {
+          "day": "祝日",
+          "time": "9:00–18:00"
+        }
+      ],
+      "open": {
+        "weekday": [
+          540,
+          1200
+        ],
+        "saturday": [
+          540,
+          1080
+        ],
+        "sunday": [
+          540,
+          1080
+        ],
+        "holiday": [
+          540,
+          1080
+        ]
+      }
+    },
+    "shop": {
+      "text": "年中無休 10:00–19:00（店舗）",
+      "rows": [
+        {
+          "day": "月〜金",
+          "time": "10:00–19:00"
+        },
+        {
+          "day": "土・日・祝",
+          "time": "10:00–19:00"
+        }
+      ],
+      "open": {
+        "weekday": [
+          600,
+          1140
+        ],
+        "saturday": [
+          600,
+          1140
+        ],
+        "sunday": [
+          600,
+          1140
+        ],
+        "holiday": [
+          600,
+          1140
+        ]
+      }
+    },
+    "appt": {
+      "text": "相談受付 9:00–21:00（年中無休）",
+      "rows": [
+        {
+          "day": "月〜金",
+          "time": "9:00–21:00"
+        },
+        {
+          "day": "土・日・祝",
+          "time": "9:00–21:00"
+        }
+      ],
+      "open": {
+        "weekday": [
+          540,
+          1260
+        ],
+        "saturday": [
+          540,
+          1260
+        ],
+        "sunday": [
+          540,
+          1260
+        ],
+        "holiday": [
+          540,
+          1260
+        ]
+      }
+    }
+  },
+  "memos": {
+    "life": {
+      "解約": "解約はお電話でのお申し出後、所定の書類をご返送いただきます。解約返戻金の有無・金額はご契約により異なります。",
+      "給付金・保険金請求": "入院・手術・通院・死亡など、給付事由により必要書類が異なります。まずはお電話・マイページでご連絡ください。",
+      "住所・氏名変更": "ご住所の変更はマイページから24時間お手続き可能。お名前の変更は本人確認書類が必要です。",
+      "受取人・払込変更": "受取人の変更は所定の請求書、保険料の払込方法・口座変更はマイページが便利です。",
+      "口座振替→クレカ": "お支払い方法を口座振替からクレジットカード払いへ変更するお手続きです。マイページまたはお電話で承ります（商品・カードにより取扱いが異なります）。",
+      "クレカ変更": "ご登録中のクレジットカードの変更（カード番号・有効期限の更新を含む）のお手続きです。マイページからのお手続きが便利です。"
+    },
+    "nonlife": {
+      "解約": "中途解約のお手続きです。自動車保険は等級の引継ぎ・解約返戻金にご注意ください。",
+      "給付金・保険金請求": "事故のご連絡・保険金のご請求はお早めに。多くの会社で事故受付は24時間365日対応です。",
+      "住所・氏名変更": "ご住所・お車・補償内容の変更はマイページまたはお電話で承ります。",
+      "受取人・払込変更": "保険料の払込方法・口座の変更、契約条件の変更を承ります。",
+      "口座振替→クレカ": "保険料のお支払いを口座振替からクレジットカード払いへ変更するお手続きです。マイページまたはお電話で承ります（商品・カードにより取扱いが異なります）。",
+      "クレカ変更": "ご登録中のクレジットカードの変更（カード番号・有効期限の更新を含む）のお手続きです。マイページからのお手続きが便利です。"
+    },
+    "kyosai": {
+      "解約": "共済契約の解約（脱退）のお手続きです。割戻金・解約手当金は契約により異なります。",
+      "給付金・保険金請求": "入院・手術・災害・死亡などの共済金請求。事由により必要書類が異なります。",
+      "住所・氏名変更": "ご住所・お名前の変更はお電話または窓口で承ります。",
+      "受取人・払込変更": "加入内容の変更・掛金の払込方法変更を承ります。",
+      "口座振替→クレカ": "掛金のお支払いを口座振替からクレジットカード払いへ変更するお手続きです。お電話または窓口で承ります（団体・商品により取扱いが異なります）。",
+      "クレカ変更": "ご登録中のクレジットカードの変更（カード番号・有効期限の更新を含む）のお手続きです。お電話または窓口で承ります。"
+    },
+    "mini": {
+      "解約": "解約はお電話または書面でのお手続きです。少額短期保険は掛捨て型が中心で返戻金がない場合があります。",
+      "給付金・保険金請求": "保険金のご請求は事由発生後お早めに。必要書類は商品により異なります。",
+      "住所・氏名変更": "ご住所・お名前の変更はマイページまたはお電話で承ります。",
+      "受取人・払込変更": "受取人の変更・保険料の支払方法変更を承ります。",
+      "口座振替→クレカ": "保険料のお支払いを口座振替からクレジットカード払いへ変更するお手続きです。マイページまたはお電話で承ります（商品・カードにより取扱いが異なります）。",
+      "クレカ変更": "ご登録中のクレジットカードの変更（カード番号・有効期限の更新を含む）のお手続きです。マイページからのお手続きが便利です。"
+    },
+    "agency": {
+      "解約": "代理店はご契約のご相談・お取次ぎ窓口です。解約のお手続き・解約返戻金のご確認は、ご契約の引受保険会社で行います。担当者・店舗がご案内します。",
+      "給付金・保険金請求": "まずは担当者・店舗へご相談ください。給付金・保険金の最終的なご請求手続きは、引受保険会社が承ります。",
+      "住所・氏名変更": "ご住所・お名前の変更は、担当代理店または引受保険会社へご連絡ください。",
+      "受取人・払込変更": "受取人・払込方法の変更は、担当代理店経由または引受保険会社でお手続きいただけます。",
+      "口座振替→クレカ": "お支払い方法の変更可否は引受保険会社により異なります。担当代理店または各保険会社へご確認ください。",
+      "クレカ変更": "ご登録クレジットカードの変更は引受保険会社でのお手続きとなります。担当代理店がご案内します。"
+    }
+  },
+  "companies": [
+    {
+      "id": 0,
+      "name": "東京海上日動火災保険",
+      "kana": "とうきょうかいじょうにちどう",
+      "category": "nonlife",
+      "brandColor": "#d70c19",
+      "initials": "東海\n日動",
+      "hoursKey": "sat",
+      "host": "www.tokiomarine-nichido.co.jp",
+      "officialUrl": "https://www.tokiomarine-nichido.co.jp",
+      "mypageUrl": "https://www.tokiomarine-nichido.co.jp",
+      "phones": [
+        {
+          "label": "お客様相談センター",
+          "number": "0120-071-281"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 1,
+      "name": "損害保険ジャパン",
+      "kana": "そんがいほけんじゃぱん",
+      "category": "nonlife",
+      "brandColor": "#e60000",
+      "initials": "損保\nJ",
+      "hoursKey": "sat",
+      "host": "www.sompo-japan.co.jp",
+      "officialUrl": "https://www.sompo-japan.co.jp",
+      "mypageUrl": "https://www.sompo-japan.co.jp",
+      "phones": [
+        {
+          "label": "お客さま総合窓口",
+          "number": "0120-888-089"
+        },
+        {
+          "label": "保険金支払ご相談窓口",
+          "number": "0120-668-292"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 2,
+      "name": "三井住友海上火災保険",
+      "kana": "みついすみともかいじょう",
+      "category": "nonlife",
+      "brandColor": "#0098d8",
+      "initials": "三井\n住友",
+      "hoursKey": "sat",
+      "host": "www.ms-ins.com",
+      "officialUrl": "https://www.ms-ins.com",
+      "mypageUrl": "https://www.ms-ins.com",
+      "phones": [
+        {
+          "label": "お客さまデスク",
+          "number": "0120-632-277"
+        },
+        {
+          "label": "保険金支払相談デスク",
+          "number": "0120-288-861"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 3,
+      "name": "あいおいニッセイ同和損保",
+      "kana": "あいおいにっせいどうわ",
+      "category": "nonlife",
+      "brandColor": "#e50012",
+      "initials": "あい\nおい",
+      "hoursKey": "sat",
+      "host": "www.aioinissaydowa.co.jp",
+      "officialUrl": "https://www.aioinissaydowa.co.jp",
+      "mypageUrl": "https://www.aioinissaydowa.co.jp",
+      "phones": [
+        {
+          "label": "カスタマーセンター",
+          "number": "0120-101-101"
+        },
+        {
+          "label": "苦情等の窓口",
+          "number": "0120-721-101"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 4,
+      "name": "共栄火災海上保険",
+      "kana": "きょうえいかさいかいじょう",
+      "category": "nonlife",
+      "brandColor": "#0a4a9e",
+      "initials": "共栄\n火災",
+      "hoursKey": "wk17",
+      "host": "www.kyoeikasai.co.jp",
+      "officialUrl": "https://www.kyoeikasai.co.jp",
+      "mypageUrl": "https://www.kyoeikasai.co.jp",
+      "phones": [
+        {
+          "label": "カスタマーセンター",
+          "number": "0120-719-112"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 5,
+      "name": "日新火災海上保険",
+      "kana": "にっしんかさいかいじょう",
+      "category": "nonlife",
+      "brandColor": "#e2001a",
+      "initials": "日新\n火災",
+      "hoursKey": "wk17",
+      "host": "www.nisshinfire.co.jp",
+      "officialUrl": "https://www.nisshinfire.co.jp",
+      "mypageUrl": "https://www.nisshinfire.co.jp",
+      "phones": [
+        {
+          "label": "お客さま相談室",
+          "number": "0120-17-2424"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 6,
+      "name": "大同火災海上保険",
+      "kana": "だいどうかさいかいじょう",
+      "category": "nonlife",
+      "brandColor": "#00a0aa",
+      "initials": "大同\n火災",
+      "hoursKey": "wk17",
+      "host": "www.daidokasai.co.jp",
+      "officialUrl": "https://www.daidokasai.co.jp",
+      "mypageUrl": "https://www.daidokasai.co.jp",
+      "phones": [
+        {
+          "label": "お客さま相談センター",
+          "number": "0120-671-071"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 7,
+      "name": "セコム損害保険",
+      "kana": "せこむそんがいほけん",
+      "category": "nonlife",
+      "brandColor": "#009a44",
+      "initials": "SECOM",
+      "hoursKey": "sat",
+      "host": "www.secom-sonpo.co.jp",
+      "officialUrl": "https://www.secom-sonpo.co.jp",
+      "mypageUrl": "https://www.secom-sonpo.co.jp",
+      "phones": [
+        {
+          "label": "お客様相談室",
+          "number": "0120-333-962"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 8,
+      "name": "AIG損害保険",
+      "kana": "えーあいじーそんがいほけん",
+      "category": "nonlife",
+      "brandColor": "#0a1a72",
+      "initials": "AIG",
+      "hoursKey": "sat",
+      "host": "aig.co.jp",
+      "officialUrl": "https://aig.co.jp/sonpo",
+      "mypageUrl": "https://aig.co.jp/sonpo",
+      "phones": [
+        {
+          "label": "商品・ご契約のお問い合わせ",
+          "number": "0120-016-693"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 9,
+      "name": "明治安田損害保険",
+      "kana": "めいじやすだそんがいほけん",
+      "category": "nonlife",
+      "brandColor": "#1f3a93",
+      "initials": "明治\n安田",
+      "hoursKey": "wk17",
+      "host": "www.meijiyasuda-sonpo.co.jp",
+      "officialUrl": "https://www.meijiyasuda-sonpo.co.jp",
+      "mypageUrl": "https://www.meijiyasuda-sonpo.co.jp",
+      "phones": [
+        {
+          "label": "お客さま相談室",
+          "number": "0120-255-400"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 10,
+      "name": "ソニー損害保険",
+      "kana": "そにーそんがいほけん",
+      "category": "nonlife",
+      "brandColor": "#1a1a1a",
+      "initials": "SONY",
+      "hoursKey": "long",
+      "host": "www.sonysonpo.co.jp",
+      "officialUrl": "https://www.sonysonpo.co.jp/",
+      "mypageUrl": "https://www.sonysonpo.co.jp/",
+      "phones": [
+        {
+          "label": "お客様相談室",
+          "number": "0120-101-656"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 11,
+      "name": "アクサ損害保険（アクサダイレクト）",
+      "kana": "あくさだいれくと",
+      "category": "nonlife",
+      "brandColor": "#00008f",
+      "initials": "AXA",
+      "hoursKey": "long",
+      "host": "axa-direct.co.jp",
+      "officialUrl": "https://axa-direct.co.jp",
+      "mypageUrl": "https://axa-direct.co.jp",
+      "phones": [
+        {
+          "label": "お客様相談室",
+          "number": "0120-449-669"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 12,
+      "name": "三井ダイレクト損害保険",
+      "kana": "みついだいれくと",
+      "category": "nonlife",
+      "brandColor": "#003f98",
+      "initials": "三井\nｄ",
+      "hoursKey": "long",
+      "host": "www.mitsui-direct.co.jp",
+      "officialUrl": "https://www.mitsui-direct.co.jp",
+      "mypageUrl": "https://www.mitsui-direct.co.jp",
+      "phones": [
+        {
+          "label": "お客さま相談デスク",
+          "number": "0120-312-770"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 13,
+      "name": "SBI損害保険",
+      "kana": "えすびーあいそんがいほけん",
+      "category": "nonlife",
+      "brandColor": "#00539b",
+      "initials": "SBI",
+      "hoursKey": "long",
+      "host": "www.sbisonpo.co.jp",
+      "officialUrl": "https://www.sbisonpo.co.jp",
+      "mypageUrl": "https://www.sbisonpo.co.jp",
+      "phones": [
+        {
+          "label": "お客様相談室",
+          "number": "0800-8888-836"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 14,
+      "name": "au損害保険",
+      "kana": "えーゆーそんがいほけん",
+      "category": "nonlife",
+      "brandColor": "#eb5505",
+      "initials": "au",
+      "hoursKey": "long",
+      "host": "www.au-sonpo.co.jp",
+      "officialUrl": "https://www.au-sonpo.co.jp",
+      "mypageUrl": "https://www.au-sonpo.co.jp",
+      "phones": [
+        {
+          "label": "カスタマーセンター",
+          "number": "0800-700-0600"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 15,
+      "name": "楽天損害保険",
+      "kana": "らくてんそんがいほけん",
+      "category": "nonlife",
+      "brandColor": "#bf0000",
+      "initials": "楽天",
+      "hoursKey": "long",
+      "host": "www.rakuten-sonpo.co.jp",
+      "officialUrl": "https://www.rakuten-sonpo.co.jp",
+      "mypageUrl": "https://www.rakuten-sonpo.co.jp",
+      "phones": [
+        {
+          "label": "お客様相談センター",
+          "number": "0120-115-603"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 16,
+      "name": "東京海上ダイレクト（イーデザイン損保）",
+      "kana": "いーでざいんそんぽ",
+      "category": "nonlife",
+      "brandColor": "#e60012",
+      "initials": "E\nDESIGN",
+      "hoursKey": "long",
+      "host": "e-design.net",
+      "officialUrl": "https://e-design.net",
+      "mypageUrl": "https://e-design.net",
+      "phones": [
+        {
+          "label": "お客さま相談ダイヤル",
+          "number": "0120-063-040"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 17,
+      "name": "SOMPOダイレクト損害保険",
+      "kana": "そんぽだいれくと",
+      "category": "nonlife",
+      "brandColor": "#e60000",
+      "initials": "SOMPO\nｄ",
+      "hoursKey": "long",
+      "host": "www.sompo-direct.co.jp",
+      "officialUrl": "https://www.sompo-direct.co.jp",
+      "mypageUrl": "https://www.sompo-direct.co.jp",
+      "phones": [
+        {
+          "label": "お客さま相談室",
+          "number": "0120-281-389"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 18,
+      "name": "NTTドコモ損害保険",
+      "kana": "どこもそんがいほけん",
+      "category": "nonlife",
+      "brandColor": "#cc0033",
+      "initials": "docomo",
+      "hoursKey": "long",
+      "host": "www.docomo-sompo.com",
+      "officialUrl": "https://www.docomo-sompo.com",
+      "mypageUrl": "https://www.docomo-sompo.com",
+      "phones": [],
+      "verified": false
+    },
+    {
+      "id": 19,
+      "name": "アニコム損害保険",
+      "kana": "あにこむそんがいほけん",
+      "category": "nonlife",
+      "brandColor": "#ec6c00",
+      "initials": "ani\ncom",
+      "hoursKey": "sat",
+      "host": "www.anicom-sompo.co.jp",
+      "officialUrl": "https://www.anicom-sompo.co.jp",
+      "mypageUrl": "https://www.anicom-sompo.co.jp",
+      "phones": [
+        {
+          "label": "お客様相談センター",
+          "number": "0800-111-1091"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 20,
+      "name": "第一アイペット損害保険",
+      "kana": "だいいちあいぺっと",
+      "category": "nonlife",
+      "brandColor": "#5b9bd5",
+      "initials": "iPet",
+      "hoursKey": "sat",
+      "host": "www.ipet-ins.com",
+      "officialUrl": "https://www.ipet-ins.com",
+      "mypageUrl": "https://www.ipet-ins.com",
+      "phones": [
+        {
+          "label": "お客さま総合ダイヤル",
+          "number": "0800-919-1525"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 21,
+      "name": "ペット&ファミリー損害保険",
+      "kana": "ぺっとあんどふぁみりー",
+      "category": "nonlife",
+      "brandColor": "#5fa83a",
+      "initials": "P&F",
+      "hoursKey": "sat",
+      "host": "petfamilyins.co.jp",
+      "officialUrl": "https://petfamilyins.co.jp",
+      "mypageUrl": "https://petfamilyins.co.jp",
+      "phones": [
+        {
+          "label": "お問い合わせ窓口",
+          "number": "0120-584-412"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 22,
+      "name": "ジェイアイ傷害火災保険",
+      "kana": "じぇいあいしょうがいかさい",
+      "category": "nonlife",
+      "brandColor": "#003da5",
+      "initials": "J/I",
+      "hoursKey": "sat",
+      "host": "www.jihoken.co.jp",
+      "officialUrl": "https://www.jihoken.co.jp",
+      "mypageUrl": "https://www.jihoken.co.jp",
+      "phones": [
+        {
+          "label": "お客様の声相談センター",
+          "number": "0120-532-200"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 23,
+      "name": "キャピタル損害保険",
+      "kana": "きゃぴたるそんがいほけん",
+      "category": "nonlife",
+      "brandColor": "#1f6f54",
+      "initials": "Cap\nital",
+      "hoursKey": "wk17",
+      "host": "www.capital-sonpo.co.jp",
+      "officialUrl": "https://www.capital-sonpo.co.jp",
+      "mypageUrl": "https://www.capital-sonpo.co.jp",
+      "phones": [
+        {
+          "label": "お客様相談室",
+          "number": "0120-777-970"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 24,
+      "name": "エイチ・エス損害保険",
+      "kana": "えいちえすそんがいほけん",
+      "category": "nonlife",
+      "brandColor": "#d6336c",
+      "initials": "H.S.",
+      "hoursKey": "wk17",
+      "host": "www.hs-sonpo.co.jp",
+      "officialUrl": "https://www.hs-sonpo.co.jp",
+      "mypageUrl": "https://www.hs-sonpo.co.jp",
+      "phones": [
+        {
+          "label": "お客様相談室",
+          "number": "050-5433-3196"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 25,
+      "name": "全管協れいわ損害保険",
+      "kana": "ぜんかんきょうれいわ",
+      "category": "nonlife",
+      "brandColor": "#6f42c1",
+      "initials": "全管\n協",
+      "hoursKey": "wk17",
+      "host": "zkreiwa-sonpo.co.jp",
+      "officialUrl": "https://zkreiwa-sonpo.co.jp",
+      "mypageUrl": "https://zkreiwa-sonpo.co.jp",
+      "phones": [
+        {
+          "label": "お客さま相談窓口",
+          "number": "0120-018-216"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 26,
+      "name": "さくら損害保険",
+      "kana": "さくらそんがいほけん",
+      "category": "nonlife",
+      "brandColor": "#e83e8c",
+      "initials": "さくら",
+      "hoursKey": "wk17",
+      "host": "sakura-ins.co.jp",
+      "officialUrl": "https://sakura-ins.co.jp",
+      "mypageUrl": "https://sakura-ins.co.jp",
+      "phones": [
+        {
+          "label": "お客さま相談",
+          "number": "03-6388-0609"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 27,
+      "name": "ヤマップネイチャランス損害保険",
+      "kana": "やまっぷねいちゃらんす",
+      "category": "nonlife",
+      "brandColor": "#2f9e44",
+      "initials": "YAMAP",
+      "hoursKey": "sat",
+      "host": "yamap-naturance.co.jp",
+      "officialUrl": "https://yamap-naturance.co.jp",
+      "mypageUrl": "https://yamap-naturance.co.jp",
+      "phones": [
+        {
+          "label": "お客様相談室",
+          "number": "0800-100-0684"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 28,
+      "name": "レスキュー損害保険",
+      "kana": "れすきゅーそんがいほけん",
+      "category": "nonlife",
+      "brandColor": "#d9480f",
+      "initials": "RES\nCUE",
+      "hoursKey": "wk17",
+      "host": "rescue-sonpo.jp",
+      "officialUrl": "https://rescue-sonpo.jp",
+      "mypageUrl": "https://rescue-sonpo.jp",
+      "phones": [
+        {
+          "label": "代表",
+          "number": "03-6722-0293"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 29,
+      "name": "日本生命保険",
+      "kana": "にっぽんせいめい",
+      "category": "life",
+      "brandColor": "#c8102e",
+      "initials": "日本\n生命",
+      "hoursKey": "sat",
+      "host": "www.nissay.co.jp",
+      "officialUrl": "https://www.nissay.co.jp",
+      "mypageUrl": "https://www.nissay.co.jp",
+      "phones": [
+        {
+          "label": "ニッセイコールセンター",
+          "number": "0120-201-021"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 30,
+      "name": "第一生命保険",
+      "kana": "だいいちせいめい",
+      "category": "life",
+      "brandColor": "#d4002a",
+      "initials": "第一\n生命",
+      "hoursKey": "sat",
+      "host": "www.dai-ichi-life.co.jp",
+      "officialUrl": "https://www.dai-ichi-life.co.jp",
+      "mypageUrl": "https://www.dai-ichi-life.co.jp",
+      "phones": [
+        {
+          "label": "第一生命コンタクトセンター",
+          "number": "0120-157-157"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 31,
+      "name": "明治安田生命保険",
+      "kana": "めいじやすだせいめい",
+      "category": "life",
+      "brandColor": "#1f3a93",
+      "initials": "明治\n安田",
+      "hoursKey": "sat",
+      "host": "www.meijiyasuda.co.jp",
+      "officialUrl": "https://www.meijiyasuda.co.jp",
+      "mypageUrl": "https://www.meijiyasuda.co.jp",
+      "phones": [
+        {
+          "label": "コミュニケーションセンター",
+          "number": "0120-662-332"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 32,
+      "name": "住友生命保険",
+      "kana": "すみともせいめい",
+      "category": "life",
+      "brandColor": "#007a3d",
+      "initials": "住友\n生命",
+      "hoursKey": "sat",
+      "host": "www.sumitomolife.co.jp",
+      "officialUrl": "https://www.sumitomolife.co.jp",
+      "mypageUrl": "https://www.sumitomolife.co.jp",
+      "phones": [
+        {
+          "label": "スミセイコールセンター",
+          "number": "0120-307-506"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 33,
+      "name": "かんぽ生命保険",
+      "kana": "かんぽせいめい",
+      "category": "life",
+      "brandColor": "#008a35",
+      "initials": "かんぽ",
+      "hoursKey": "sat",
+      "host": "jp-life.japanpost.jp",
+      "officialUrl": "https://jp-life.japanpost.jp",
+      "mypageUrl": "https://jp-life.japanpost.jp",
+      "phones": [
+        {
+          "label": "かんぽコールセンター",
+          "number": "0120-552-950"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 34,
+      "name": "太陽生命保険",
+      "kana": "たいようせいめい",
+      "category": "life",
+      "brandColor": "#f08300",
+      "initials": "太陽\n生命",
+      "hoursKey": "sat",
+      "host": "www.taiyo-seimei.co.jp",
+      "officialUrl": "https://www.taiyo-seimei.co.jp",
+      "mypageUrl": "https://www.taiyo-seimei.co.jp",
+      "phones": [
+        {
+          "label": "お客様サービスセンター",
+          "number": "0120-97-2111"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 35,
+      "name": "大同生命保険",
+      "kana": "だいどうせいめい",
+      "category": "life",
+      "brandColor": "#e60012",
+      "initials": "大同\n生命",
+      "hoursKey": "sat",
+      "host": "www.daido-life.co.jp",
+      "officialUrl": "https://www.daido-life.co.jp",
+      "mypageUrl": "https://www.daido-life.co.jp",
+      "phones": [
+        {
+          "label": "コールセンター",
+          "number": "0120-789-501"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 36,
+      "name": "富国生命保険",
+      "kana": "ふこくせいめい",
+      "category": "life",
+      "brandColor": "#00529b",
+      "initials": "富国\n生命",
+      "hoursKey": "sat",
+      "host": "www.fukoku-life.co.jp",
+      "officialUrl": "https://www.fukoku-life.co.jp",
+      "mypageUrl": "https://www.fukoku-life.co.jp",
+      "phones": [
+        {
+          "label": "お客さまセンター",
+          "number": "0120-259-817"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 37,
+      "name": "朝日生命保険",
+      "kana": "あさひせいめい",
+      "category": "life",
+      "brandColor": "#e60012",
+      "initials": "朝日\n生命",
+      "hoursKey": "sat",
+      "host": "www.asahi-life.co.jp",
+      "officialUrl": "https://www.asahi-life.co.jp",
+      "mypageUrl": "https://www.asahi-life.co.jp",
+      "phones": [
+        {
+          "label": "お客様サービスセンター",
+          "number": "0120-714-532"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 38,
+      "name": "大樹生命保険",
+      "kana": "たいじゅせいめい",
+      "category": "life",
+      "brandColor": "#1a5276",
+      "initials": "大樹\n生命",
+      "hoursKey": "sat",
+      "host": "www.taiju-life.co.jp",
+      "officialUrl": "https://www.taiju-life.co.jp",
+      "mypageUrl": "https://www.taiju-life.co.jp",
+      "phones": [
+        {
+          "label": "お客さまサービスセンター",
+          "number": "0120-318-766"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 39,
+      "name": "アフラック生命保険",
+      "kana": "あふらっくせいめい",
+      "category": "life",
+      "brandColor": "#00529b",
+      "initials": "AFLAC",
+      "hoursKey": "sat",
+      "host": "www.aflac.co.jp",
+      "officialUrl": "https://www.aflac.co.jp",
+      "mypageUrl": "https://www.aflac.co.jp",
+      "phones": [
+        {
+          "label": "アフラックスクエア コールセンター",
+          "number": "0120-5555-95"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 40,
+      "name": "メットライフ生命保険",
+      "kana": "めっとらいふせいめい",
+      "category": "life",
+      "brandColor": "#0090c5",
+      "initials": "Met\nLife",
+      "hoursKey": "sat",
+      "host": "www.metlife.co.jp",
+      "officialUrl": "https://www.metlife.co.jp",
+      "mypageUrl": "https://www.metlife.co.jp",
+      "phones": [
+        {
+          "label": "カスタマーサービスセンター",
+          "number": "0120-881-796"
+        },
+        {
+          "label": "お客さま相談室",
+          "number": "0120-880-533"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 41,
+      "name": "ソニー生命保険",
+      "kana": "そにーせいめい",
+      "category": "life",
+      "brandColor": "#1a1a1a",
+      "initials": "SONY",
+      "hoursKey": "sat",
+      "host": "www.sonylife.co.jp",
+      "officialUrl": "https://www.sonylife.co.jp",
+      "mypageUrl": "https://www.sonylife.co.jp",
+      "phones": [
+        {
+          "label": "カスタマーセンター",
+          "number": "0120-158-821"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 42,
+      "name": "プルデンシャル生命保険",
+      "kana": "ぷるでんしゃるせいめい",
+      "category": "life",
+      "brandColor": "#00467f",
+      "initials": "Pru",
+      "hoursKey": "sat",
+      "host": "www.prudential.co.jp",
+      "officialUrl": "https://www.prudential.co.jp",
+      "mypageUrl": "https://www.prudential.co.jp",
+      "phones": [
+        {
+          "label": "カスタマーサービスセンター",
+          "number": "0120-810-740"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 43,
+      "name": "ジブラルタ生命保険",
+      "kana": "じぶらるたせいめい",
+      "category": "life",
+      "brandColor": "#b8101f",
+      "initials": "Gib",
+      "hoursKey": "sat",
+      "host": "www.gib-life.co.jp",
+      "officialUrl": "https://www.gib-life.co.jp",
+      "mypageUrl": "https://www.gib-life.co.jp",
+      "phones": [
+        {
+          "label": "コールセンター",
+          "number": "0120-37-2269"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 44,
+      "name": "アクサ生命保険",
+      "kana": "あくさせいめい",
+      "category": "life",
+      "brandColor": "#00008f",
+      "initials": "AXA",
+      "hoursKey": "sat",
+      "host": "axa.co.jp",
+      "officialUrl": "https://axa.co.jp",
+      "mypageUrl": "https://axa.co.jp",
+      "phones": [
+        {
+          "label": "お客様相談室",
+          "number": "0120-030-775"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 45,
+      "name": "東京海上日動あんしん生命",
+      "kana": "あんしんせいめい",
+      "category": "life",
+      "brandColor": "#00508f",
+      "initials": "あん\nしん",
+      "hoursKey": "sat",
+      "host": "www.tmn-anshin.co.jp",
+      "officialUrl": "https://www.tmn-anshin.co.jp",
+      "mypageUrl": "https://www.tmn-anshin.co.jp",
+      "phones": [
+        {
+          "label": "カスタマーセンター",
+          "number": "0120-016-234"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 46,
+      "name": "三井住友海上あいおい生命",
+      "kana": "えむえすあいおいせいめい",
+      "category": "life",
+      "brandColor": "#0098d8",
+      "initials": "MSA",
+      "hoursKey": "sat",
+      "host": "www.msa-life.co.jp",
+      "officialUrl": "https://www.msa-life.co.jp",
+      "mypageUrl": "https://www.msa-life.co.jp",
+      "phones": [
+        {
+          "label": "お客さまサービスセンター",
+          "number": "0120-324-386"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 47,
+      "name": "SOMPOひまわり生命保険",
+      "kana": "ひまわりせいめい",
+      "category": "life",
+      "brandColor": "#ec6c00",
+      "initials": "ひま\nわり",
+      "hoursKey": "sat",
+      "host": "www.himawari-life.co.jp",
+      "officialUrl": "https://www.himawari-life.co.jp",
+      "mypageUrl": "https://www.himawari-life.co.jp",
+      "phones": [
+        {
+          "label": "お客さま相談グループ",
+          "number": "0120-273-211"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 48,
+      "name": "オリックス生命保険",
+      "kana": "おりっくすせいめい",
+      "category": "life",
+      "brandColor": "#003d7a",
+      "initials": "ORIX",
+      "hoursKey": "sat",
+      "host": "www.orixlife.co.jp",
+      "officialUrl": "https://www.orixlife.co.jp",
+      "mypageUrl": "https://www.orixlife.co.jp",
+      "phones": [
+        {
+          "label": "カスタマーサービスセンター",
+          "number": "0120-506-094"
+        },
+        {
+          "label": "お客さま相談窓口",
+          "number": "0120-227-780"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 49,
+      "name": "ライフネット生命保険",
+      "kana": "らいふねっとせいめい",
+      "category": "life",
+      "brandColor": "#f08300",
+      "initials": "Life\nNet",
+      "hoursKey": "sat",
+      "host": "www.lifenet-seimei.co.jp",
+      "officialUrl": "https://www.lifenet-seimei.co.jp",
+      "mypageUrl": "https://www.lifenet-seimei.co.jp",
+      "phones": [
+        {
+          "label": "コンタクトセンター",
+          "number": "0120-205-566"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 50,
+      "name": "はなさく生命保険",
+      "kana": "はなさくせいめい",
+      "category": "life",
+      "brandColor": "#e84393",
+      "initials": "はな\nさく",
+      "hoursKey": "sat",
+      "host": "www.life8739.co.jp",
+      "officialUrl": "https://www.life8739.co.jp",
+      "mypageUrl": "https://www.life8739.co.jp",
+      "phones": [
+        {
+          "label": "お客様コンタクトセンター",
+          "number": "0120-8739-17"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 51,
+      "name": "第一ネオ生命保険",
+      "kana": "だいいちねおせいめい",
+      "category": "life",
+      "brandColor": "#00a884",
+      "initials": "第一\nNeo",
+      "hoursKey": "sat",
+      "host": "neofirst.co.jp",
+      "officialUrl": "https://neofirst.co.jp",
+      "mypageUrl": "https://neofirst.co.jp",
+      "phones": [
+        {
+          "label": "コンタクトセンター",
+          "number": "0120-312-201"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 52,
+      "name": "メディケア生命保険",
+      "kana": "めでぃけあせいめい",
+      "category": "life",
+      "brandColor": "#0984e3",
+      "initials": "Medi\ncare",
+      "hoursKey": "sat",
+      "host": "medicarelife.com",
+      "officialUrl": "https://medicarelife.com",
+      "mypageUrl": "https://medicarelife.com",
+      "phones": [
+        {
+          "label": "コールセンター",
+          "number": "0120-315-056"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 53,
+      "name": "チューリッヒ生命",
+      "kana": "ちゅーりっひせいめい",
+      "category": "life",
+      "brandColor": "#0033a0",
+      "initials": "Zurich",
+      "hoursKey": "sat",
+      "host": "www.zurichlife.co.jp",
+      "officialUrl": "https://www.zurichlife.co.jp",
+      "mypageUrl": "https://www.zurichlife.co.jp",
+      "phones": [
+        {
+          "label": "カスタマーケアセンター",
+          "number": "0120-236-523"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 54,
+      "name": "FWD生命保険",
+      "kana": "えふだぶりゅーでぃーせいめい",
+      "category": "life",
+      "brandColor": "#e67817",
+      "initials": "FWD",
+      "hoursKey": "sat",
+      "host": "www.fwdlife.co.jp",
+      "officialUrl": "https://www.fwdlife.co.jp",
+      "mypageUrl": "https://www.fwdlife.co.jp",
+      "phones": [
+        {
+          "label": "総合サービスセンター",
+          "number": "0120-211-901"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 55,
+      "name": "マニュライフ生命保険",
+      "kana": "まにゅらいふせいめい",
+      "category": "life",
+      "brandColor": "#00853f",
+      "initials": "Manu\nlife",
+      "hoursKey": "sat",
+      "host": "www.manulife.co.jp",
+      "officialUrl": "https://www.manulife.co.jp/ja/individual.html",
+      "mypageUrl": "https://www.manulife.co.jp/ja/individual.html",
+      "phones": [
+        {
+          "label": "お客様コールセンター",
+          "number": "0120-063-730"
+        },
+        {
+          "label": "変額年金カスタマーセンター",
+          "number": "0120-925-008"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 56,
+      "name": "SBI生命保険",
+      "kana": "えすびーあいせいめい",
+      "category": "life",
+      "brandColor": "#00539b",
+      "initials": "SBI",
+      "hoursKey": "sat",
+      "host": "www.sbilife.co.jp",
+      "officialUrl": "https://www.sbilife.co.jp",
+      "mypageUrl": "https://www.sbilife.co.jp",
+      "phones": [
+        {
+          "label": "お客様コンタクトセンター",
+          "number": "0120-272-811"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 57,
+      "name": "楽天生命保険",
+      "kana": "らくてんせいめい",
+      "category": "life",
+      "brandColor": "#bf0000",
+      "initials": "楽天\n生命",
+      "hoursKey": "sat",
+      "host": "www.rakuten-insurance.co.jp",
+      "officialUrl": "https://www.rakuten-insurance.co.jp",
+      "mypageUrl": "https://www.rakuten-insurance.co.jp",
+      "phones": [
+        {
+          "label": "楽天保険の総合窓口",
+          "number": "0120-849-150"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 58,
+      "name": "なないろ生命保険",
+      "kana": "なないろせいめい",
+      "category": "life",
+      "brandColor": "#c0398e",
+      "initials": "なな\nいろ",
+      "hoursKey": "sat",
+      "host": "www.nanairolife.co.jp",
+      "officialUrl": "https://www.nanairolife.co.jp",
+      "mypageUrl": "https://www.nanairolife.co.jp",
+      "phones": [
+        {
+          "label": "お客様サービスC（一般）",
+          "number": "0120-08-7716"
+        },
+        {
+          "label": "お客様サービスC（シニア）",
+          "number": "0120-38-7716"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 59,
+      "name": "第一フロンティア生命保険",
+      "kana": "だいいちふろんてぃあ",
+      "category": "life",
+      "brandColor": "#d4002a",
+      "initials": "第一\nFr",
+      "hoursKey": "sat",
+      "host": "www.d-frontier-life.co.jp",
+      "officialUrl": "https://www.d-frontier-life.co.jp",
+      "mypageUrl": "https://www.d-frontier-life.co.jp",
+      "phones": [
+        {
+          "label": "お客さまサービスセンター",
+          "number": "0120-876-126"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 60,
+      "name": "T&Dフィナンシャル生命保険",
+      "kana": "てぃーあんどでぃー",
+      "category": "life",
+      "brandColor": "#1a5276",
+      "initials": "T&D",
+      "hoursKey": "sat",
+      "host": "www.tdf-life.co.jp",
+      "officialUrl": "https://www.tdf-life.co.jp",
+      "mypageUrl": "https://www.tdf-life.co.jp",
+      "phones": [
+        {
+          "label": "お客様サービスセンター",
+          "number": "0120-301-396"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 61,
+      "name": "エヌエヌ生命保険",
+      "kana": "えぬえぬせいめい",
+      "category": "life",
+      "brandColor": "#ee7203",
+      "initials": "NN",
+      "hoursKey": "sat",
+      "host": "nnlife.co.jp",
+      "officialUrl": "https://nnlife.co.jp",
+      "mypageUrl": "https://nnlife.co.jp",
+      "phones": [
+        {
+          "label": "サービスセンター",
+          "number": "0120-521-513"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 62,
+      "name": "カーディフ生命保険",
+      "kana": "かーでぃふせいめい",
+      "category": "life",
+      "brandColor": "#00915a",
+      "initials": "Car\ndif",
+      "hoursKey": "sat",
+      "host": "life.cardif.co.jp",
+      "officialUrl": "https://life.cardif.co.jp",
+      "mypageUrl": "https://life.cardif.co.jp",
+      "phones": [
+        {
+          "label": "カスタマーサービスセンター",
+          "number": "0120-820-275"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 63,
+      "name": "クレディ・アグリコル生命保険",
+      "kana": "くれでぃあぐりこるせいめい",
+      "category": "life",
+      "brandColor": "#006a4e",
+      "initials": "CA",
+      "hoursKey": "sat",
+      "host": "ca-life.jp",
+      "officialUrl": "https://ca-life.jp",
+      "mypageUrl": "https://ca-life.jp",
+      "phones": [
+        {
+          "label": "カスタマーサービスセンター",
+          "number": "0120-60-1221"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 64,
+      "name": "ニッセイ・ウェルス生命保険",
+      "kana": "にっせいうぇるすせいめい",
+      "category": "life",
+      "brandColor": "#1a3c8c",
+      "initials": "NW",
+      "hoursKey": "sat",
+      "host": "www.nw-life.co.jp",
+      "officialUrl": "https://www.nw-life.co.jp",
+      "mypageUrl": "https://www.nw-life.co.jp",
+      "phones": [
+        {
+          "label": "カスタマーサービスセンター",
+          "number": "0120-817-024"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 65,
+      "name": "フコクしんらい生命保険",
+      "kana": "ふこくしんらいせいめい",
+      "category": "life",
+      "brandColor": "#0a6cb0",
+      "initials": "しん\nらい",
+      "hoursKey": "sat",
+      "host": "www.fukokushinrai.co.jp",
+      "officialUrl": "https://www.fukokushinrai.co.jp",
+      "mypageUrl": "https://www.fukokushinrai.co.jp",
+      "phones": [
+        {
+          "label": "お客さまサービス室",
+          "number": "0120-700-651"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 66,
+      "name": "PGF生命保険",
+      "kana": "ぴーじーえふせいめい",
+      "category": "life",
+      "brandColor": "#00467f",
+      "initials": "PGF",
+      "hoursKey": "sat",
+      "host": "www.pgf-life.co.jp",
+      "officialUrl": "https://www.pgf-life.co.jp",
+      "mypageUrl": "https://www.pgf-life.co.jp",
+      "phones": [
+        {
+          "label": "コールセンター",
+          "number": "0120-56-2269"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 67,
+      "name": "三井住友海上プライマリー生命",
+      "kana": "みついすみともぷらいまりー",
+      "category": "life",
+      "brandColor": "#0098d8",
+      "initials": "MSP",
+      "hoursKey": "sat",
+      "host": "www.ms-primary.com",
+      "officialUrl": "https://www.ms-primary.com",
+      "mypageUrl": "https://www.ms-primary.com",
+      "phones": [
+        {
+          "label": "お客さまサービスセンター",
+          "number": "0120-125-104"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 68,
+      "name": "みどり生命保険",
+      "kana": "みどりせいめい",
+      "category": "life",
+      "brandColor": "#43a047",
+      "initials": "みどり",
+      "hoursKey": "sat",
+      "host": "midori-life.com",
+      "officialUrl": "https://midori-life.com",
+      "mypageUrl": "https://midori-life.com",
+      "phones": [
+        {
+          "label": "お客さまサービスセンター",
+          "number": "0120-566-322"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 69,
+      "name": "明治安田トラスト生命保険",
+      "kana": "めいじやすだとらすとせいめい",
+      "category": "life",
+      "brandColor": "#1f3a93",
+      "initials": "明安\nT",
+      "hoursKey": "sat",
+      "host": "www.meijiyasuda-trustlife.co.jp",
+      "officialUrl": "https://www.meijiyasuda-trustlife.co.jp",
+      "mypageUrl": "https://www.meijiyasuda-trustlife.co.jp",
+      "phones": [
+        {
+          "label": "カスタマーサービスセンター",
+          "number": "0120-503-928"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "id": 70,
+      "name": "JA共済（全国共済農業協同組合連合会）",
+      "kana": "じぇいえーきょうさい",
+      "category": "kyosai",
+      "brandColor": "#007c36",
+      "initials": "JA",
+      "hoursKey": "wk17",
+      "host": "www.ja-kyosai.or.jp",
+      "officialUrl": "https://www.ja-kyosai.or.jp",
+      "mypageUrl": "https://www.ja-kyosai.or.jp",
+      "phones": [],
+      "verified": false
+    },
+    {
+      "id": 71,
+      "name": "こくみん共済 coop〈全労済〉",
+      "kana": "こくみんきょうさいぜんろうさい",
+      "category": "kyosai",
+      "brandColor": "#f29600",
+      "initials": "こく\nみん",
+      "hoursKey": "sat",
+      "host": "www.zenrosai.coop",
+      "officialUrl": "https://www.zenrosai.coop",
+      "mypageUrl": "https://www.zenrosai.coop",
+      "phones": [],
+      "verified": false
+    },
+    {
+      "id": 72,
+      "name": "都道府県民共済〈全国生協連〉",
+      "kana": "けんみんきょうさい",
+      "category": "kyosai",
+      "brandColor": "#009a44",
+      "initials": "県民\n共済",
+      "hoursKey": "wk17",
+      "host": "www.kyosai-cc.or.jp",
+      "officialUrl": "https://www.kyosai-cc.or.jp",
+      "mypageUrl": "https://www.kyosai-cc.or.jp",
+      "phones": [],
+      "verified": false
+    },
+    {
+      "id": 73,
+      "name": "CO・OP共済〈コープ共済連〉",
+      "kana": "こーぷきょうさい",
+      "category": "kyosai",
+      "brandColor": "#e95513",
+      "initials": "CO\nOP",
+      "hoursKey": "sat",
+      "host": "coopkyosai.coop",
+      "officialUrl": "https://coopkyosai.coop",
+      "mypageUrl": "https://coopkyosai.coop",
+      "phones": [],
+      "verified": false
+    },
+    {
+      "id": 74,
+      "name": "教職員共済",
+      "kana": "きょうしょくいんきょうさい",
+      "category": "kyosai",
+      "brandColor": "#2d6a9f",
+      "initials": "教職\n員",
+      "hoursKey": "wk17",
+      "host": "www.kyousyokuin.or.jp",
+      "officialUrl": "https://www.kyousyokuin.or.jp",
+      "mypageUrl": "https://www.kyousyokuin.or.jp",
+      "phones": [],
+      "verified": false
+    },
+    {
+      "id": 75,
+      "name": "SBIいきいき少額短期保険",
+      "kana": "えすびーあいいきいき",
+      "category": "mini",
+      "brandColor": "#00539b",
+      "initials": "いき\nいき",
+      "hoursKey": "long",
+      "host": "www.i-sedai.com",
+      "officialUrl": "https://www.i-sedai.com/",
+      "mypageUrl": "https://www.i-sedai.com/",
+      "phones": [],
+      "verified": false
+    },
+    {
+      "id": 76,
+      "name": "アイアル少額短期保険",
+      "kana": "あいあるしょうがくたんき",
+      "category": "mini",
+      "brandColor": "#7a3aa8",
+      "initials": "aial",
+      "hoursKey": "wk17",
+      "host": "www.air-ins.co.jp",
+      "officialUrl": "https://www.air-ins.co.jp/",
+      "mypageUrl": "https://www.air-ins.co.jp/",
+      "phones": [],
+      "verified": false
+    },
+    {
+      "id": 77,
+      "name": "justInCase",
+      "kana": "じゃすといんけーす",
+      "category": "mini",
+      "brandColor": "#ff5a5f",
+      "initials": "jIC",
+      "hoursKey": "long",
+      "host": "justincase.jp",
+      "officialUrl": "https://justincase.jp",
+      "mypageUrl": "https://justincase.jp",
+      "phones": [],
+      "verified": false
+    },
+    {
+      "id": 78,
+      "name": "ぜんち共済〈少額短期保険〉",
+      "kana": "ぜんちきょうさい",
+      "category": "mini",
+      "brandColor": "#16a085",
+      "initials": "ぜん\nち",
+      "hoursKey": "wk17",
+      "host": "www.z-kyosai.com",
+      "officialUrl": "https://www.z-kyosai.com/",
+      "mypageUrl": "https://www.z-kyosai.com/",
+      "phones": [],
+      "verified": false
+    },
+    {
+      "id": 79,
+      "name": "エクセルエイド少額短期保険",
+      "kana": "えくせるえいど",
+      "category": "mini",
+      "brandColor": "#8e44ad",
+      "initials": "EXL",
+      "hoursKey": "wk17",
+      "host": "www.ansin-ssi.com",
+      "officialUrl": "https://www.ansin-ssi.com/customer/excelaid/",
+      "mypageUrl": "https://www.ansin-ssi.com/customer/excelaid/",
+      "phones": [],
+      "verified": false
+    },
+    {
+      "id": 80,
+      "name": "ほけんの窓口（来店型）",
+      "kana": "ほけんのまどぐち",
+      "category": "agency",
+      "brandColor": "#e8380d",
+      "initials": "窓口",
+      "hoursKey": "shop",
+      "host": "www.hokennomadoguchi.com",
+      "officialUrl": "https://www.hokennomadoguchi.com",
+      "mypageUrl": "https://www.hokennomadoguchi.com",
+      "phones": [],
+      "verified": false
+    },
+    {
+      "id": 81,
+      "name": "保険見直し本舗（来店型）",
+      "kana": "ほけんみなおしほんぽ",
+      "category": "agency",
+      "brandColor": "#0a8a4a",
+      "initials": "見直\n本舗",
+      "hoursKey": "shop",
+      "host": "www.hokepon.com",
+      "officialUrl": "https://www.hokepon.com/",
+      "mypageUrl": "https://www.hokepon.com/",
+      "phones": [],
+      "verified": false
+    },
+    {
+      "id": 82,
+      "name": "保険クリニック（来店型）",
+      "kana": "ほけんくりにっく",
+      "category": "agency",
+      "brandColor": "#0a6cb0",
+      "initials": "保険\nｸﾘﾆｯｸ",
+      "hoursKey": "shop",
+      "host": "hoken-clinic.com",
+      "officialUrl": "https://hoken-clinic.com",
+      "mypageUrl": "https://hoken-clinic.com",
+      "phones": [],
+      "verified": false
+    },
+    {
+      "id": 83,
+      "name": "保険市場（来店・オンライン）",
+      "kana": "ほけんいちば",
+      "category": "agency",
+      "brandColor": "#c8102e",
+      "initials": "保険\n市場",
+      "hoursKey": "shop",
+      "host": "www.hokende.com",
+      "officialUrl": "https://www.hokende.com/",
+      "mypageUrl": "https://www.hokende.com/",
+      "phones": [],
+      "verified": false
+    },
+    {
+      "id": 84,
+      "name": "イオンのほけん相談（来店型）",
+      "kana": "いおんのほけんそうだん",
+      "category": "agency",
+      "brandColor": "#e6007e",
+      "initials": "イオン",
+      "hoursKey": "shop",
+      "host": "www.hokenmarket.net",
+      "officialUrl": "https://www.hokenmarket.net/",
+      "mypageUrl": "https://www.hokenmarket.net/",
+      "phones": [],
+      "verified": false
+    },
+    {
+      "id": 85,
+      "name": "マネードクター（訪問型）",
+      "kana": "まねーどくたー",
+      "category": "agency",
+      "brandColor": "#1f3a93",
+      "initials": "Money\nDr",
+      "hoursKey": "appt",
+      "host": "fp-moneydoctor.com",
+      "officialUrl": "https://fp-moneydoctor.com/",
+      "mypageUrl": "https://fp-moneydoctor.com/",
+      "phones": [],
+      "verified": false
+    },
+    {
+      "id": 86,
+      "name": "保険マンモス（訪問型）",
+      "kana": "ほけんまんもす",
+      "category": "agency",
+      "brandColor": "#7a4a1f",
+      "initials": "マン\nモス",
+      "hoursKey": "appt",
+      "host": "hoken-mammoth.com",
+      "officialUrl": "https://hoken-mammoth.com/leads/",
+      "mypageUrl": "https://hoken-mammoth.com/leads/",
+      "phones": [],
+      "verified": false
+    },
+    {
+      "id": 87,
+      "name": "みんなの生命保険アドバイザー（訪問型）",
+      "kana": "みんなのせいめいほけんあどばいざー",
+      "category": "agency",
+      "brandColor": "#0d7a8a",
+      "initials": "みんな\nの保険",
+      "hoursKey": "appt",
+      "host": "www.41fp.com",
+      "officialUrl": "https://www.41fp.com/",
+      "mypageUrl": "https://www.41fp.com/",
+      "phones": [],
+      "verified": false
+    }
+  ]
+}
