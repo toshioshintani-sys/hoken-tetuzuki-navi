@@ -390,14 +390,21 @@ function DetailDrawer({
               const active = procedure.key === selectedProcedure;
 
               return (
-                <article className={active ? 'procedure-guide__item is-active' : 'procedure-guide__item'} key={procedure.key}>
+                <a
+                  className={active ? 'procedure-guide__item is-active' : 'procedure-guide__item'}
+                  key={procedure.key}
+                  href={company.officialUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <div className="procedure-guide__title">
                     <span style={{ borderColor: procedure.color, color: procedure.color }}>{procedure.icon}</span>
                     <strong>{procedure.key}</strong>
+                    <ExternalIcon />
                   </div>
                   <p>{data.memos[company.category][procedure.key]}</p>
                   <small>推奨窓口：{phone ? phone.label : '公式サイトでご確認ください'}</small>
-                </article>
+                </a>
               );
             })}
           </div>

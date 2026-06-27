@@ -1075,6 +1075,17 @@ svg {
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 8px;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.procedure-guide__item:hover {
+  border-color: var(--blue);
+  background: #f7faff;
+  box-shadow: 0 4px 14px rgba(20, 37, 59, 0.08);
 }
 
 .procedure-guide__item.is-active {
@@ -1104,6 +1115,17 @@ svg {
   color: var(--ink);
   font-size: 14px;
   font-weight: 900;
+}
+
+.procedure-guide__title svg {
+  margin-left: auto;
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: var(--muted);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .procedure-guide p {
