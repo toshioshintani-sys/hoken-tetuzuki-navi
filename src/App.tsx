@@ -205,7 +205,6 @@ function CompanyItem({
   const hours = data.hoursPresets[company.hoursKey];
   const open = isOpen(company);
   const hoursUnknown = Boolean(hours.unknown);
-  const hasPortal = company.mypageUrl !== company.officialUrl;
   const phone = pickPhone(company, selectedProcedure);
   const procedurePrefix = selectedProcedure ? `「${selectedProcedure}」の窓口` : '代表窓口';
   const helper =
@@ -267,13 +266,8 @@ function CompanyItem({
         <button type="button" className="primary-action" onClick={() => onOpen(company)}>
           詳しい窓口・手続き
         </button>
-        <a
-          href={hasPortal ? company.mypageUrl : company.officialUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="secondary-action"
-        >
-          {hasPortal ? 'マイページ' : '公式サイト'}
+        <a href={company.officialUrl} target="_blank" rel="noreferrer" className="secondary-action">
+          公式サイト
           <ExternalIcon />
         </a>
       </div>
@@ -413,12 +407,12 @@ function DetailDrawer({
         <div className="drawer-footer">
           {hasPortal ? (
             <>
-              <a href={company.mypageUrl} target="_blank" rel="noreferrer" className="primary-action">
-                マイページ
+              <a href={company.officialUrl} target="_blank" rel="noreferrer" className="primary-action">
+                公式サイト
                 <ExternalIcon />
               </a>
-              <a href={company.officialUrl} target="_blank" rel="noreferrer" className="secondary-action">
-                公式サイト
+              <a href={company.mypageUrl} target="_blank" rel="noreferrer" className="secondary-action">
+                マイページ
                 <ExternalIcon />
               </a>
             </>
