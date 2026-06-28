@@ -361,6 +361,15 @@ function DetailDrawer({
               </a>
             </div>
           )}
+          {company.phones.length > 0 && (
+            <div className="call-notes">
+              <strong>お電話の前に</strong>
+              <ul>
+                <li>お手続きは原則ご契約者さまご本人から。給付金・保険金請求を除き、ご本人以外の代理でのお申し出は受け付けられない場合が多くあります。</li>
+                <li>対象のご契約の証券番号をお手元にご用意いただくと、お手続きがスムーズです。</li>
+              </ul>
+            </div>
+          )}
         </section>
 
         <section className="drawer-section">

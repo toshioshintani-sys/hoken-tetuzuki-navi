@@ -1028,6 +1028,38 @@ svg {
   font-weight: 900;
 }
 
+.call-notes {
+  margin-top: 12px;
+  padding: 11px 13px;
+  background: #fbf6ec;
+  border: 1px solid #ecdcc0;
+  border-radius: 8px;
+}
+
+.call-notes strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #8a6d3b;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.call-notes ul {
+  margin: 0;
+  padding-left: 17px;
+}
+
+.call-notes li {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.65;
+}
+
+.call-notes li + li {
+  margin-top: 5px;
+}
+
 .hours-table {
   overflow: hidden;
   border: 1px solid var(--line);
